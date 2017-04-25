@@ -1,0 +1,69 @@
+# Makefile for bulding the Communication layer
+
+CPP = g++
+INCDIR = ./
+SRCDIR = ./
+OBJDIR = ./obj/
+BINDIR = ./bin/
+LIBRARY = ../Bin/Communication.a
+LIBCFLAGS = -Wall -pedantic
+
+CFLAGS = -O3 -I $(INCDIR) -I /usr/local/boost/boost_1_39_0 \
+	-I /usr/local/loki-0.1.7/include -I ../ \
+	-DVATROSLAV_UNO
+LFLAGS = 
+
+COMM_OBJS = $(OBJDIR)DummyImpl.o $(OBJDIR)CommPrint.o $(OBJDIR)CommPar.o\
+			  $(OBJDIR)CommImpl.o $(OBJDIR)Communication.o $(OBJDIR)comm_test.o $(OBJDIR)CanAdv.o
+
+all: $(BINDIR)comm_test
+
+#doc: $(INCDIR)*.hpp Doxyfile
+#	@echo "Building Doxygen documentation..."
+#	doxygen Doxyfile
+
+clean:
+	@echo "Cleaning up the Communication project..."
+	rm -f $(OBJDIR)*.o
+	rm -f $(BINDIR)comm_test
+	rm -f $(INCDIR)*~
+	rm -f $(SRCDIR)*~
+
+$(BINDIR)comm_test: $(COMM_OBJS)
+	@echo "Building communication test executable..."
+	$(CPP) $(LFLAGS) -o $(BINDIR)comm_test $(COMM_OBJS)
+
+$(OBJDIR)CanAdv.o: $(INCDIR)CanAdv.hpp $(SRCDIR)CanAdv.cpp
+	@echo "Compiling CanAdv..."
+	$(CPP) $(CFLAGS) -c -o $(OBJDIR)CanAdv.o $(SRCDIR)CanAdv.cpp
+
+$(OBJDIR)DummyImpl.o: $(INCDIR)DummyImpl.hpp $(SRCDIR)DummyImpl.cpp
+	@echo "Compiling DummyImpl..."
+	$(CPP) $(CFLAGS) -c -o $(OBJDIR)DummyImpl.o $(SRCDIR)DummyImpl.cpp
+
+$(OBJDIR)CommPrint.o: $(INCDIR)CommPrint.hpp $(SRCDIR)CommPrint.cpp
+	@echo "Compiling CommPrint..."
+	$(CPP) $(CFLAGS) -c -o $(OBJDIR)CommPrint.o $(SRCDIR)CommPrint.cpp
+
+$(OBJDIR)CommPar.o: $(INCDIR)CommPar.hpp $(SRCDIR)CommPar.cpp
+	@echo "Compiling CommPar Interface..."
+	$(CPP) $(CFLAGS) -c -o $(OBJDIR)CommPar.o $(SRCDIR)CommPar.cpp
+
+$(OBJDIR)CommImpl.o: $(INCDIR)*.hpp $(SRCDIR)CommImpl.cpp
+	@echo "Compiling CommImpl..."
+	$(CPP) $(CFLAGS) -c -o $(OBJDIR)CommImpl.o $(SRCDIR)CommImpl.cpp
+
+$(OBJDIR)Communication.o: $(INCDIR)*.hpp $(SRCDIR)Communication.cpp
+	@echo "Compiling Communication..."
+	$(CPP) $(CFLAGS) -c -o $(OBJDIR)Communication.o $(SRCDIR)Communication.cpp
+	
+$(OBJDIR)comm_test.o: $(INCDIR)*.hpp $(SRCDIR)comm_test.cpp
+	@echo "Compiling comm_test..."
+	$(CPP) $(CFLAGS) -c -o $(OBJDIR)comm_test.o $(SRCDIR)comm_test.cpp
+
+all: $(LIBRARY)
+.cpp.o:
+	g++ -c $(LIBCFLAGS) $<
+#create static library archive from OBJECTS
+$(LIBRARY): $(COMM_OBJS)
+	ar rcso $(LIBRARY) $(COMM_OBJS)

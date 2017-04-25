@@ -1,0 +1,99 @@
+#include "Communication/CommPrint.hpp"
+#include "LinAct.hpp"
+
+namespace Vatroslav{
+	namespace pt = boost::posix_time;
+
+//=============================================================================
+
+LinAct::LinAct(int id, CommPtr pComm) : status_( 0 ), 
+											id_( id ), 
+											pComm_( pComm )
+{
+	set_state=0;
+}
+
+//=============================================================================
+
+	bool LinAct::UpdateWrite(){
+		char data[] = { 3};
+	
+		data[0]=1;
+		CommMsg msg1( id_, data, 1, pt::microsec_clock::local_time() );
+		data[0]=2;
+		CommMsg msg2( id_, data, 1, pt::microsec_clock::local_time() );
+		
+		if (set_state==1){
+			pComm_->Send(msg1);
+		} else if (set_state==2){
+			pComm_->Send(msg2);
+		}
+		return true;
+	}
+
+//=============================================================================
+
+	bool LinAct::UpdateRead(){
+		char data[] = { 3};
+	
+		set_state=0;
+		data[0]=3;
+		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
+		if (pComm_->Send(msg)){
+			if (pComm_->Receive( msg, 1000 )){
+				status_=msg.Data()[0];
+				return true;
+			}
+		}
+		return false;
+	}
+
+//=============================================================================
+	bool LinAct::Connect(){
+		pComm_->Open();
+		char data[] = { 3};
+		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
+		if (pComm_->Send(msg)){
+			if (pComm_->Receive( msg, 1000 )){
+				status_=msg.Data()[0];
+				return true;	
+			}
+		}	
+		return false;
+	}
+//=============================================================================
+	bool LinAct::Disconnect(){
+		return true;
+	}
+//=============================================================================
+	bool LinAct::On(){
+		set_state=1;
+		char data[] = { 1};
+		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
+		return pComm_->Send(msg);
+	}
+//=============================================================================
+	bool LinAct::Off(){
+		set_state=2;
+		char data[] = {2};
+		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
+		return pComm_->Send(msg);
+	}
+//=============================================================================
+<<<<<<< .mine
+	LinAct::status_enum LinAct::Status(){
+		if (this->status_==0) return off;
+		if (this->status_==1) return on;
+		if (this->status_==2) return changing_state;
+		if (this->status_==3) return failed_turning_on;
+		return other;
+=======
+	LinAct::status_enum LinAct::Status(){
+		if (this->status_==0) return off;
+		if (this->status_==1) return on;
+		if (this->status_==2) return changing_state;
+		if (this->status_==3) return failed_turning_on;
+		return status_enum::other;
+>>>>>>> .r52
+	}
+}

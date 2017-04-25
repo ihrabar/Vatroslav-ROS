@@ -1,0 +1,186 @@
+/*! \file	motor_test.cpp
+	
+	Application for testing the motors.
+ */
+
+#include <cmath>
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/timeb.h>
+
+#include "Communication/Communication.hpp"
+#include "MotorEPOS.hpp"
+#include "LinAct.hpp"
+
+using namespace Vatroslav;
+
+int main ( void )
+{
+int i;
+	std::cout << "Motor test program..." << std::endl;
+	
+	/* 
+		Test all four motors 
+	 */
+
+	
+//	CommPar par1( CommPar::IXXAT, 125000 );
+	//CommPar par1(CommPar::WIN, "COM1:");
+	CommPar par1(CommPar::BOOST, "COM1"); //   "/dev/ttyS0"
+	CommPtr pComm( Communication::Create( Communication::BLOCKING, par1 ) );
+	
+	//Solenoid sol=Solenoid::Solenoid(101,pComm);
+	RegParEPOS par2;
+	MotionParEPOS par3(PROFILE_POSITION_MODE);
+	MotorParEPOS par4( 1, par2, par3 );
+	MotorEPOS mot1( par4, pComm );
+	
+	mot1.Connect();
+	std::cout << "state:" << mot1.GET_EPOS_STATE() << std::endl;
+	std::cout << "status:" << mot1.Status().Id() << std::endl;
+	std::cout << "message:" << mot1.Status().Message() << std::endl;
+	
+	mot1.PositionRef(-9999);
+	mot1.VelocityRef(-50);
+	mot1.Params().MotionParams().SetProfileVelocity(10000);
+	mot1.Params().MotionParams().SetProfileAcceleration(2000);
+	mot1.UpdateMotionParWrite();
+
+	mot1.UpdateWrite();
+	
+	do
+	{
+		mot1.UpdateReadMeasuredData();
+		std::cout << "pos:" << mot1.Position() << std::endl;
+		std::cout << "vel:" << mot1.Velocity() << std::endl;
+	} while (!mot1.IS_TARGET_REACHED());
+
+	std::cout << "state:" << mot1.GET_EPOS_STATE() << std::endl;
+	std::cout << "status:" << mot1.Status().Id() << std::endl;
+	std::cout << "message:" << mot1.Status().Message() << std::endl;
+
+	
+	mot1.QUICKSTOP();
+	mot1.DISABLE_EPOS();
+
+	std::cout << "state:" << mot1.GET_EPOS_STATE() << std::endl;
+	std::cout << "status:" << mot1.Status().Id() << std::endl;
+	std::cout << "message:" << mot1.Status().Message() << std::endl;
+
+	mot1.Disconnect();
+
+	_getch();
+	return 0;
+	
+	//sol.On();
+	//sol.Update();
+	mot1.VelocityRef(1000);
+	mot1.UpdateMotionParWrite();
+	mot1.UpdateRead();
+	mot1.UpdateWrite();
+	for (i=0;i<10000000;i++){
+	}
+	mot1.VelocityRef(-1000);
+	mot1.UpdateMotionParWrite();
+	mot1.UpdateRead();
+	mot1.UpdateWrite();
+	for (i=0;i<10000000;i++){
+	}
+	mot1.VelocityRef(50);
+	mot1.UpdateMotionParWrite();
+	mot1.UpdateRead();
+	mot1.UpdateWrite();
+
+	//sol.On();
+	//sol.Update();
+	mot1.VelocityRef(50);
+	mot1.UpdateMotionParWrite();
+	mot1.UpdateRead();
+	mot1.UpdateWrite();
+	for (i=0;i<1000000000;i++);
+
+	mot1.QUICKSTOP();
+	//sol.Off();
+	//sol.Update();
+	return 0;
+	struct timeb tp;
+	time_t t1, t2;
+	mot1.QUICKSTOP();
+	int smj = 1;
+	for (i = 0 ; i <= 3; ++i )
+ 	{
+		mot1.PositionRef(17000*smj);
+		mot1.UpdateWrite();
+		ftime(&tp);
+	    t1 = tp.millitm + (tp.time & 0xFFFFF) * 1000;
+		do{
+			ftime(&tp);
+			t2 = tp.millitm + (tp.time & 0xFFFFF) * 1000;
+		} while (!mot1.IS_TARGET_REACHED() && abs((long)(t1-t2))<550);
+		smj*=-1;
+		if (i>=2)
+		{
+			//sol.Off();
+			//sol.Update();
+
+		}
+
+	}
+	//std::cout << "Press any key and hit return to stop the motor..." << std::endl;
+	//sol.Off();
+	//sol.Update();
+
+	for (i = 0 ; i <= 2; ++i )
+ 	{
+		mot1.PositionRef(10000*smj);
+		mot1.UpdateRead();
+		mot1.UpdateWrite();
+		ftime(&tp);
+	    t1 = tp.millitm + (tp.time & 0xFFFFF) * 1000;
+		do{
+			ftime(&tp);
+			t2 = tp.millitm + (tp.time & 0xFFFFF) * 1000;
+		} while (!mot1.IS_TARGET_REACHED() && abs((long)(t1-t2))<550);
+		smj*=-1;
+	}
+
+	char c;
+	//std::cin >> c;
+	
+	mot1.QUICKSTOP();
+
+	mot1.Params().MotionParams().SetMotorOperationMode(PROFILE_POSITION_MODE);
+	mot1.Params().MotionParams().SetProfileVelocity(5000);
+	mot1.SetAbsoluteMovement(true);
+	mot1.PositionRef(0);
+	mot1.UpdateMotionParWrite();
+
+	mot1.UpdateMotorParRead();
+	mot1.UpdateMotionParRead();
+	//std::cout << "max current: " << mot1.Params().GetMaximalCurrent() <<std::endl;
+	//std::cout << "max speed: " << mot1.Params().GetMaximalSpeed() << std::endl;
+	//std::cout << "max limit: " << mot1.Params().MotionParams().GetMaximalPositionLimit() << std::endl;
+	//std::cout << "max fol. error: " << mot1.Params().MotionParams().GetMaxFollowingErr() << std::endl;
+	//std::cout << "min pos. limit: " << mot1.Params().MotionParams().GetMinimalPositionLimit() << std::endl;
+
+	mot1.UpdateRead();
+	mot1.UpdateWrite();
+
+	//do
+	//{
+	//	mot1.UpdateReadMeasuredData();
+	//	std::cout << "pos:" << mot1.GetActualPosition() << std::endl;
+	//	std::cout << "vel:" << mot1.GetActualVelocity() << std::endl;
+	//} while (!mot1.IS_TARGET_REACHED());
+	std::cout << "Press any key and hit return to halt the motor..." << std::endl;
+
+	std::cin >> c;
+	
+	mot1.HALT();
+	
+	mot1.Disconnect();
+
+	return 0;
+}
