@@ -4,6 +4,8 @@
 
 #ifdef VATROSLAV_UNO
 
+#include "ros/ros.h"
+
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>

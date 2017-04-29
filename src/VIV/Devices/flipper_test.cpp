@@ -3,6 +3,10 @@
 	Main file for the flipper-testing application.
  */
 
+#include "ros/ros.h"
+#include "std_msgs/String.h"
+#include <sstream>
+#include <stdlib.h>
 #include "../Communication/Communication.hpp"
 #include "MotorEPOS.hpp"
 #include "LinAct.hpp"
@@ -13,6 +17,18 @@
 using namespace Vatroslav;
 int main( int argc, char* argv[] )
 {
+
+	ros::init(argc, argv, "mainControl");
+	ros::NodeHandle n;
+	ros::Rate loop_rate(10);
+	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+
+	std_msgs::String msg2;
+	std::stringstream ss;
+	ss << "hello world " << count;
+	msg2.data = ss.str();
+
+	chatter_pub.publish(msg2);
 
 		CommPar par( CommPar::UNO,125000,"can1" );
 

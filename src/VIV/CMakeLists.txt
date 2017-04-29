@@ -30,7 +30,7 @@ INCLUDE_DIRECTORIES(${LOKI_INCLUDE_DIR})
 ################################################
 
 # Generate messages in the 'msg' folder
-#add_message_files(FILES arrayData.msg gridData.msg Path.msg planData.msg stateInfo.msg vehInfo.msg)
+add_message_files(FILES CanMsg.msg)
 
 # Generate services in the 'srv' folder
 #add_service_files(FILES CommStatus.srv GetMyPlan.srv Removal.srv)
@@ -55,12 +55,11 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 
 ## Declare a cpp executable
 #add_executable(canCommunicationTest Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp Communication/comm_test.cpp)
-add_executable(flipperTest Devices/MotorEPOS.cpp Devices/LinAct.cpp Devices/Sensor.cpp Devices/Flipper.cpp Devices/Kinematics.cpp Devices/WirelessVIV.cpp Devices/flipper_test.cpp Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp)
-#add_executable(agvController src/agvController.cpp src/collisionDetection.cpp src/pathFollowing.cpp)
+add_executable(mainControl Devices/flipper_test.cpp Devices/MotorEPOS.cpp Devices/LinAct.cpp Devices/Sensor.cpp Devices/Flipper.cpp Devices/Kinematics.cpp Devices/WirelessVIV.cpp Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp)
 
 ## Specify libraries to link a library or executable target against
 #TARGET_LINK_LIBRARIES( canCommunicationTest ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${libloki_LIBRARIES})
-TARGET_LINK_LIBRARIES( flipperTest ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${libloki_LIBRARIES})
+TARGET_LINK_LIBRARIES( mainControl ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${libloki_LIBRARIES})
 #target_link_libraries(canCommunication ${catkin_LIBRARIES})
 
 # This prevents files being compiled before the necessary messages
