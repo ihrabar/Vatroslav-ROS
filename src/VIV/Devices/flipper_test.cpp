@@ -14,7 +14,11 @@
 #include "../Communication/SerialBoost.hpp"
 #include "WirelessVIV.hpp"
 #include <unistd.h>
+
+//using namespace std;
+
 using namespace Vatroslav;
+
 int main( int argc, char* argv[] )
 {
 
@@ -25,7 +29,7 @@ int main( int argc, char* argv[] )
 
 	std_msgs::String msg2;
 	std::stringstream ss;
-	ss << "hello world " << count;
+	ss << "hello world " << std::cout;
 	msg2.data = ss.str();
 
 	chatter_pub.publish(msg2);
