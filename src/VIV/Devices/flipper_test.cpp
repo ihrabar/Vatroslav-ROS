@@ -22,7 +22,7 @@ using namespace Vatroslav;
 int main( int argc, char* argv[] )
 {
 
-	ros::init(argc, argv, "mainControl");
+	ros::init(argc, argv, "vatroslav");
 	ros::NodeHandle n;
 	ros::Rate loop_rate(10);
 	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
@@ -33,6 +33,7 @@ int main( int argc, char* argv[] )
 	msg2.data = ss.str();
 
 	chatter_pub.publish(msg2);
+	ros::spinOnce();
 
 		CommPar par( CommPar::UNO,125000,"can1" );
 

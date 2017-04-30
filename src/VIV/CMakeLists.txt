@@ -6,6 +6,7 @@ project(vatroslav)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS  
   roscpp
+  rospy
   std_msgs
   tf
   message_generation
@@ -55,7 +56,7 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 
 ## Declare a cpp executable
 #add_executable(canCommunicationTest Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp Communication/comm_test.cpp)
-add_executable(mainControl Devices/flipper_test.cpp Devices/MotorEPOS.cpp Devices/LinAct.cpp Devices/Sensor.cpp Devices/Flipper.cpp Devices/Kinematics.cpp Devices/WirelessVIV.cpp Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp)
+add_executable(mainControl  Devices/flipper_test.cpp Devices/MotorEPOS.cpp Devices/LinAct.cpp Devices/Sensor.cpp Devices/Flipper.cpp Devices/Kinematics.cpp Devices/WirelessVIV.cpp Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp)
 
 ## Specify libraries to link a library or executable target against
 #TARGET_LINK_LIBRARIES( canCommunicationTest ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${libloki_LIBRARIES})
