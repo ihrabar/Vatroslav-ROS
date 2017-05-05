@@ -19,12 +19,13 @@
 
 using namespace Vatroslav;
 
+
 int main( int argc, char* argv[] )
 {
 
 	ros::init(argc, argv, "vatroslav");
 	ros::NodeHandle n;
-	ros::Rate loop_rate(10);
+	ros::Rate loop_rate(1);
 	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
 
 	std_msgs::String msg2;
@@ -42,7 +43,7 @@ int main( int argc, char* argv[] )
 	CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
 //	p_comm->Open();
 	
-	int debug;
+	//int debug;
 	p_comm->Open();
 	//if(	p_comm->Open()	) printf("Hra_test_1\n");
 	RegParEPOS par2; 
@@ -60,7 +61,7 @@ int main( int argc, char* argv[] )
 	boost::shared_ptr<MotorEPOS> motor4(new MotorEPOS( par44, p_comm ));	
 	//std::cout << "Hra_test_4" << std::endl;
 	
-	boost::shared_ptr<LinAct> lin1(new LinAct(101,p_comm));
+	boost::shared_ptr<LinAct> lin1(new LinAct(101,p_comm));//stvoriti svoje nodove ya lin act??????????????
 	boost::shared_ptr<LinAct> lin2(new LinAct(102,p_comm));
 	boost::shared_ptr<LinAct> lin3(new LinAct(103,p_comm));
 	boost::shared_ptr<LinAct> lin4(new LinAct(104,p_comm));

@@ -22,6 +22,9 @@
 #include <errno.h>
 //#undef min	// remove min macro 
 
+/////////////////////////////////// TU PROMJENITI DA NE RADIR DIREKT NA CAN ANEGO DA DALJE NA CAN NODE
+
+
 namespace Vatroslav
 {
 namespace pt = boost::posix_time;
