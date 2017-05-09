@@ -23,7 +23,8 @@
 #include "SerialBoost.hpp"
 #include "../Devices/WirelessVIV.hpp"
 #include <unistd.h>
-//#include <vatroslav/CanMsg.h>
+
+#include <vatroslav/CanMsg.h>
 //#undef min	// remove min macro 
 
 
@@ -39,9 +40,15 @@ ros::Publisher can_pub;
 // global ROS publisher handles
 
 
-int publishCAN( Vatroslav::CommMsg por){
-	
-  	//can_pub.publish(por);
+int publishCAN( Vatroslav::CommMsg por1){
+//pretvaranje u oblik pogodan za slanje	
+	vatroslav::CanMsg por2;
+	por2.id = por1.Id();
+	memcpy(&por2.data,por1.Data(),por1.Size());
+	por2.size = por1.Size();
+	memcpy(&por2.time,por1.Data(), 32);//32 jer je u CanMsg definirano int32 kao prostor za zapis vremena
+
+  	can_pub.publish(por2);
 	return 0;
 }
 
@@ -54,8 +61,9 @@ int main( int argc, char* argv[] )
 
 	ros::init(argc, argv, "canCommunicationNode");
 	ros::NodeHandle n;
+	ros::Rate loop_rate(1);
 
-	//can_pub = n.advertise<Vatroslav::CommMsg>("publishCAN", 1000);
+	can_pub = n.advertise<vatroslav::CanMsg>("publishCAN", 1000);
 	
 	Vatroslav::CommPar par( Vatroslav::CommPar::UNO,125000,"can1" );
 	Vatroslav::CommPtr p_comm( Vatroslav::Communication::Create( Vatroslav::Communication::BLOCKING, par ) );
@@ -67,6 +75,6 @@ int main( int argc, char* argv[] )
 
 	publishCAN(msg);
 
-	ros::Rate loop_rate(1);
+	
 }
 
