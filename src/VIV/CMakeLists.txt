@@ -33,18 +33,15 @@ INCLUDE_DIRECTORIES(${LOKI_INCLUDE_DIR})
 # Generate messages in the 'msg' folder
 add_message_files(FILES CanMsg.msg)
 
-# Generate services in the 'srv' folder
-#add_service_files(FILES CommStatus.srv GetMyPlan.srv Removal.srv)
-
 # Generate added messages and services with any dependencies listed here
-#generate_messages(DEPENDENCIES std_msgs geometry_msgs)
+generate_messages(DEPENDENCIES std_msgs geometry_msgs)
 
 ###################################
 ## catkin specific configuration ##
 ###################################
 
 catkin_package(
-  CATKIN_DEPENDS roscpp std_msgs tf message_runtime
+  CATKIN_DEPENDS roscpp rospy std_msgs tf message_runtime
 )
 
 
@@ -56,18 +53,20 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 
 ## Declare a cpp executable
 #add_executable(canCommunicationTest Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp Communication/comm_test.cpp)
-add_executable(mainControl  Devices/flipper_test.cpp Devices/MotorEPOS.cpp Devices/LinAct.cpp Devices/Sensor.cpp Devices/Flipper.cpp Devices/Kinematics.cpp Devices/WirelessVIV.cpp Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp)
-
+#add_executable(mainControl  Devices/flipper_test.cpp Devices/MotorEPOS.cpp Devices/LinAct.cpp Devices/Sensor.cpp Devices/Flipper.cpp Devices/Kinematics.cpp Devices/WirelessVIV.cpp Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp)
+add_executable(canCommunication Devices/MotorEPOS.cpp Devices/LinAct.cpp Devices/Sensor.cpp Devices/Flipper.cpp Devices/Kinematics.cpp Devices/WirelessVIV.cpp Communication/CanAdv.cpp Communication/DummyImpl.cpp Communication/CommPrint.cpp Communication/CommPar.cpp Communication/CommImpl.cpp Communication/Communication.cpp Communication/SerialBoost.cpp Communication/TimeoutSerial.cpp Communication/canCommunicationNode.cpp)
 ## Specify libraries to link a library or executable target against
 #TARGET_LINK_LIBRARIES( canCommunicationTest ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${libloki_LIBRARIES})
-TARGET_LINK_LIBRARIES( mainControl ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${libloki_LIBRARIES})
+#TARGET_LINK_LIBRARIES( mainControl ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${libloki_LIBRARIES})
+TARGET_LINK_LIBRARIES( canCommunication ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${libloki_LIBRARIES})
 #target_link_libraries(canCommunication ${catkin_LIBRARIES})
+
 
 # This prevents files being compiled before the necessary messages
 # get generated!
-#add_dependencies(canCommunication canCommunication) ?????????????? kakoooooo
+add_dependencies(canCommunication vatroslav_gencpp) #?????????????? kakoooooo
 #add_dependencies(agvController agv_control_gencpp)
-#add_dependencies(motionSimSR agv_control_gencpp)
+
 
 
 

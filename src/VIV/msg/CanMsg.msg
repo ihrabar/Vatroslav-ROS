@@ -1,5 +1,4 @@
-unsigned short id 
-const char* data
-size_t size
-boost::posix_time::ptime timestamp
-
+uint8 id 
+uint8 data  
+int8 size
+uint32 time

@@ -36,15 +36,15 @@ int main( int argc, char* argv[] )
 	chatter_pub.publish(msg2);
 	ros::spinOnce();
 
-		CommPar par( CommPar::UNO,125000,"can1" );
+		//CommPar par( CommPar::UNO,125000,"can1" );
 
 //	std::cout << par << std::endl;	
 //	if( CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) ) ) printf("Hra_test_1\n");
-	CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
+	//CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
 //	p_comm->Open();
 	
 	//int debug;
-	p_comm->Open();
+	//p_comm->Open();
 	//if(	p_comm->Open()	) printf("Hra_test_1\n");
 	RegParEPOS par2; 
 	MotionParEPOS par3(PROFILE_VELOCITY_MODE);
