@@ -36,7 +36,7 @@
 // SVI OSTLAI NODEOVI CE IMATI LISTENER CALL BACK KOJI SE PRIMATI CAN PORUKU I PRIHVACATI JE AKO JE YA NJEGA INACE ODBACITI
 
 
-ros::Publisher can_pub;
+ros::Publisher can_received;
 // global ROS publisher handles
 
 
@@ -48,13 +48,13 @@ int publishCAN( Vatroslav::CommMsg por1){
 	por2.size = por1.Size();
 	memcpy(&por2.time,por1.Data(), 32);//32 jer je u CanMsg definirano int32 kao prostor za zapis vremena
 
-  	can_pub.publish(por2);
+  	can_received.publish(por2);
 	return 0;
 }
 
 
 //int callbackCAN
-
+//  http://answers.ros.org/question/59725/publishing-to-a-topic-via-subscriber-callback-function/
 
 int main( int argc, char* argv[] )
 {
@@ -63,7 +63,7 @@ int main( int argc, char* argv[] )
 	ros::NodeHandle n;
 	ros::Rate loop_rate(1);
 
-	can_pub = n.advertise<vatroslav::CanMsg>("publishCAN", 1000);
+	can_received = n.advertise<vatroslav::CanMsg>("reciveCAN", 1000);
 	
 	Vatroslav::CommPar par( Vatroslav::CommPar::UNO,125000,"can1" );
 	Vatroslav::CommPtr p_comm( Vatroslav::Communication::Create( Vatroslav::Communication::BLOCKING, par ) );
