@@ -58,7 +58,7 @@ void canCallback(const vatroslav::CanMsg& por)
 		
 	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, boost::posix_time::from_iso_string(por.time));
 
-	(*p_comm2)->Send(result);
+	//(*p_comm2)->Send(result);
 
   //ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
@@ -135,7 +135,7 @@ int main( int argc, char* argv[] )
 	Vatroslav::CommPtr p_comm( Vatroslav::Communication::Create( Vatroslav::Communication::BLOCKING, par ) );
 		
 	p_comm->Open();
-	*p_comm2 = p_comm;
+	p_comm2 = &p_comm;
 	
 	/*Pero mojPero(p_comm);*/
 

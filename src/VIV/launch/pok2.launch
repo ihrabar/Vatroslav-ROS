@@ -5,8 +5,9 @@
     <param name="host" value="$(arg host)" />
   </node>
 
-	<node name="canCommunication" pkg="vatroslav" type="canCommunication"/>
+	<node name="canCommunication" pkg="vatroslav" type="canCommunication"/>  
 
 
 
 </launch>
+
