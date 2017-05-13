@@ -18,6 +18,7 @@
 //using namespace std;
 
 using namespace Vatroslav;
+ros::Publisher sendToCAN;
 
 
 int main( int argc, char* argv[] )
@@ -25,16 +26,11 @@ int main( int argc, char* argv[] )
 
 	ros::init(argc, argv, "vatroslav");
 	ros::NodeHandle n;
-	ros::Rate loop_rate(1);
-	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+	//ros::Rate loop_rate(1);
+	
+	sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
 
-	std_msgs::String msg2;
-	std::stringstream ss;
-	ss << "hello world " << std::cout;
-	msg2.data = ss.str();
-
-	chatter_pub.publish(msg2);
-	ros::spinOnce();
+	
 
 		//CommPar par( CommPar::UNO,125000,"can1" );
 
@@ -335,9 +331,11 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 			for (j=0;j<10000;j++) t++;
 		}*/
 
-		printf("				Pozicije:\n					 motor3: %d\n					motor4: %d\n					motor1: %d\n					motor2: %d\n",motor3->Position(),motor4->Position(),motor1->Position(),motor2->Position());
+		//printf("				Pozicije:\n					 motor3: %d\n					motor4: %d\n					motor1: %d\n					motor2: %d\n",motor3->Position(),motor4->Position(),motor1->Position(),motor2->Position());
 	}
 
-	std::cout << "Hra_test_21_kraj" << std::endl;
+	ros::spinOnce();
+
+	//std::cout << "Hra_test_21_kraj" << std::endl;
 	return 0;
 }

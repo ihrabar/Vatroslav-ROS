@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o"
   "CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o"
   "CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o"
+  "CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o"
   "/home/larics/catkin_ws/devel/lib/vatroslav/canCommunication.pdb"
   "/home/larics/catkin_ws/devel/lib/vatroslav/canCommunication"
 )

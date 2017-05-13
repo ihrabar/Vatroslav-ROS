@@ -166,7 +166,7 @@ namespace serialization
       stream.next(m.b);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct AddTwoIntsRequest_
 
 } // namespace serialization

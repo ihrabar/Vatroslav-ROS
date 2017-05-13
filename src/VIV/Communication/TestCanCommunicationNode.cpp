@@ -36,17 +36,17 @@
 //DODATI MAIN U KOJEM CE SE INICIJALIYIRATI KOMUNIKAICJA
 // SVI OSTLAI NODEOVI CE IMATI LISTENER CALL BACK KOJI SE PRIMATI CAN PORUKU I PRIHVACATI JE AKO JE YA NJEGA INACE ODBACITI
 
-Vatroslav::CommPtr* p_comm2;
-ros::Publisher can_received;
+Vatroslav::CommPtr* p_comm12;
+ros::Publisher can_received1;
 // global ROS publisher handles
 
 // %Tag(CALLBACK)%
 
 
 
-void canCallback(const vatroslav::CanMsg& por)
+void canCallback1(const vatroslav::CanMsg& por)
 {
-	 char result_data[] = {0 ,0, 0, 0, 0, 0, 0, 0};
+	char result_data[] = {0 ,0, 0, 0, 0, 0, 0, 0};
 	result_data[0] = (char) por.data[0];
 	result_data[1] = (char) por.data[1];
 	result_data[2] = (char) por.data[2];
@@ -57,14 +57,15 @@ void canCallback(const vatroslav::CanMsg& por)
 	result_data[7] = (char) por.data[7];
 		
 	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, boost::posix_time::from_iso_string(por.time));
-
-	(*p_comm2)->Send(result);
+	
+	ROS_INFO("canTopicPublisher poslao %s", por.data);
+	//(*p_comm12)->Send(result);
 
   //ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
 // %EndTag(CALLBACK)%
 
-int publishCAN(const Vatroslav::CommMsg& por1){
+int publishCAN1(const Vatroslav::CommMsg& por1){
 
 //pretvaranje u oblik pogodan za slanje	
 	vatroslav::CanMsg por2;
@@ -81,61 +82,27 @@ int publishCAN(const Vatroslav::CommMsg& por1){
 	//memcpy(&por2.time, por1.Timestamp(), 4);//
 	//memcpy(&por2.time,por1.Data(), 32);//32bita jer je u CanMsg definirano int32 kao prostor za zapis vremena
 
-  	can_received.publish(por2);
+  	can_received1.publish(por2);
 	return 0;
 }
 
-
-//int callbackCAN
-//  http://answers.ros.org/question/59725/publishing-to-a-topic-via-subscriber-callback-function/
-
-/*class Pero
-	{
-	public:
-		static Vatroslav::CommPtr moj_can;
-		
-		Pero_(Vatroslav::CommPtr neki_can)
-			{
-			Pero.moj_can = neki_can;
-			}		
-		
-		void canCallback2(const vatroslav::CanMsg& por)
-			{
-				 char result_data[] = {0 ,0, 0, 0, 0, 0, 0, 0};
-				result_data[0] = (char) por.data[0];
-				result_data[1] = (char) por.data[1];
-				result_data[2] = (char) por.data[2];
-				result_data[3] = (char) por.data[3];
-				result_data[4] = (char) por.data[4];
-				result_data[5] = (char) por.data[5];
-				result_data[6] = (char) por.data[6];
-				result_data[7] = (char) por.data[7];
-		
-				Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, boost::posix_time::from_iso_string(por.time));
-
-				this->moj_can;
-
-			  //ROS_INFO("I heard: [%s]", msg->data.c_str());
-			}
-		
-	};*/
 
 
 
 int main( int argc, char* argv[] )
 {	
 	
-	ros::init(argc, argv, "canCommunicationNode");
+	ros::init(argc, argv, "TestCanCommunicationNode");
 	ros::NodeHandle n;
 	ros::Rate loop_rate(1);
 
-	can_received = n.advertise<vatroslav::CanMsg>("reciveCAN", 1000);
+	can_received1 = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
 	
-	Vatroslav::CommPar par( Vatroslav::CommPar::UNO,125000,"can1" );
-	Vatroslav::CommPtr p_comm( Vatroslav::Communication::Create( Vatroslav::Communication::BLOCKING, par ) );
+	//Vatroslav::CommPar par( Vatroslav::CommPar::UNO,125000,"can1" );
+	//Vatroslav::CommPtr p_comm( Vatroslav::Communication::Create( Vatroslav::Communication::BLOCKING, par ) );
 		
-	p_comm->Open();
-	p_comm2 = &p_comm;
+	//p_comm->Open();
+	//p_comm12 = &p_comm;
 	
 	/*Pero mojPero(p_comm);*/
 
@@ -143,10 +110,10 @@ int main( int argc, char* argv[] )
 	Vatroslav::CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
 
 
-	publishCAN(msg);
+	publishCAN1(msg);
 
 	// %Tag(SUBSCRIBER)%
-  	ros::Subscriber sub = n.subscribe("sendCAN", 1000, canCallback);
+  	ros::Subscriber sub = n.subscribe("reciveCAN", 1000, canCallback1);
 	// %EndTag(SUBSCRIBER)%
 
 	ros::spin();
