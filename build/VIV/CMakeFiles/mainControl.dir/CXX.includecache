@@ -257,6 +257,8 @@ canTopicPublisher.hpp
 /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 errno.h
 -
+CommMsg.hpp
+/home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
 
 /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 cassert
@@ -267,6 +269,12 @@ can4linux.h
 /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
 CommImpl.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
+Communication.hpp
+/home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
+CommMsg.hpp
+/home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
+vatroslav/CanMsg.h
+-
 
 /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
 boost/shared_ptr.hpp
@@ -323,12 +331,18 @@ Flipper.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CommPrint.hpp
 LinAct.hpp
 /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
+../Communication/CommMsg.hpp
+/home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
+vatroslav/CanMsg.h
+-
 
 /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
 Device.hpp
 /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
 ../Communication/Communication.hpp
 /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
+../Communication/canTopicPublisher.hpp
+/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 
 /home/larics/catkin_ws/src/VIV/Devices/Motor.hpp
 string

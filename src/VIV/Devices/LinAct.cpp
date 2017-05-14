@@ -1,5 +1,7 @@
 #include "../Communication/CommPrint.hpp"
 #include "LinAct.hpp"
+#include "../Communication/CommMsg.hpp"
+#include <vatroslav/CanMsg.h>
 
 namespace Vatroslav{
 	namespace pt = boost::posix_time;
@@ -99,12 +101,12 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 
 //=============================================================================
 	bool LinAct::Connect(){
-		pComm_->Open();
+		//pComm_->Open();
 		char data[] = { 4};
 		data[0]=4;
 		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
 		if (Send(msg)){
-			if (pComm_->Receive( msg, 1000 )){
+			if (Receive( msg, 1000 )){
 				if (msg.Size()>0) {
 					status_=msg.Data()[0];
 					open_=true;
@@ -174,8 +176,8 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 		set_state=20;
 		char data[] = {20};
 		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
-		if (pComm_->Send(msg)){
-			if (pComm_->Receive( msg, 1000 )){
+		if (Send(msg)){
+			if (Receive( msg, 1000 )){
 				if (msg.Size()>6) {
 					if (msg.Data()[0]==20){
 //						std::cout<<msg<<std::endl;

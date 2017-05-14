@@ -3,6 +3,8 @@
 
 #include "Device.hpp"
 #include "../Communication/Communication.hpp"
+#include "../Communication/canTopicPublisher.hpp"
+
 
 namespace Vatroslav
 {

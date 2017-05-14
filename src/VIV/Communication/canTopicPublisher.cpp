@@ -20,6 +20,7 @@
 #include <iostream>
 #include "canTopicPublisher.hpp"
 #include <errno.h>
+#include "CommMsg.hpp"
 //#undef min	// remove min macro 
 
 /////////////////////////////////// TU PROMJENITI DA NE RADIR DIREKT NA CAN ANEGO DA DALJE NA CAN NODE
@@ -29,53 +30,9 @@ namespace Vatroslav
 {
 namespace pt = boost::posix_time;
 
-//-----------------------------------------------------------------------------
-
-canTopicPublisher::canTopicPublisher() : open_(false), par_( CommPar( CommPar::NONE ) )
-{
-
-}
-
-//-----------------------------------------------------------------------------
-
-canTopicPublisher::~canTopicPublisher()
-{
-	if ( open_ )
-	{
-		this->Close();
-	}
-}
-
-//-----------------------------------------------------------------------------
 
 /* virtual */
-
-
-bool canTopicPublisher::Open( const CommPar& par )
-{
-	return true;
-		
-}
-
-//-----------------------------------------------------------------------------
-
-int canTopicPublisher::set_bitrate(int can_fd, int baud )
-{
-   return 0;
-}
-
-//-----------------------------------------------------------------------------
-
-/* virtual */
-bool canTopicPublisher::Close()
-{
-	return true;
-}
-
-//-----------------------------------------------------------------------------
-
-/* virtual */
-bool canTopicPublisher::Send( const CommMsg& por1)
+bool Send( const CommMsg& por1)
 {
 
 	vatroslav::CanMsg por2;
@@ -96,7 +53,7 @@ bool canTopicPublisher::Send( const CommMsg& por1)
 //-----------------------------------------------------------------------------
 
 /* virtual */
-bool canTopicPublisher::Receive(CommMsg& msg, unsigned short timeout)
+bool Receive(CommMsg& msg, unsigned short timeout)
 {
 	
 	return success;

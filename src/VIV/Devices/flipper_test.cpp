@@ -34,7 +34,7 @@ int main( int argc, char* argv[] )
 
 	//CommPtr p_comm();
 
-		//CommPar par( CommPar::UNO,125000,"can1" );
+	CommPar par( CommPar::UNO,125000,"can1" );
 
 //	std::cout << par << std::endl;	
 //	if( CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) ) ) printf("Hra_test_1\n");
@@ -267,7 +267,7 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 	CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
 	//std::cout << "Hra_test_19.1" << std::endl;	
 	
-	while (p_comm->Receive(msg,30));//{std::cout << "Hra_test_19.1_zapeo_while" << std::endl;};//ovo je praznjenje buffera
+	while (Receive(msg,30));//{std::cout << "Hra_test_19.1_zapeo_while" << std::endl;};//ovo je praznjenje buffera
 	//std::cout << "Hra_test_19.2" << std::endl;	
 	wir.EmptyBuffer();
 	int brojac=0;
@@ -275,7 +275,7 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 	while (1){
 		time=boost::posix_time::microsec_clock::local_time() ;
 		//std::cout<<time<<std::endl;
-		while (p_comm->Receive(msg,10));
+		while (Receive(msg,10));
 		if (pow->GetStateDrive()){
 			kin->UpdateWrite();
 			kin->UpdateRead();
