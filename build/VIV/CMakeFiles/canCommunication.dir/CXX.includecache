@@ -89,8 +89,8 @@ SerialBoost.hpp
 /home/larics/catkin_ws/src/VIV/Communication/SerialBoost.hpp
 CanIxxat.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CanIxxat.hpp
-canTopicPublisher.hpp
-/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
+CanAdv.hpp
+/home/larics/catkin_ws/src/VIV/Communication/CanAdv.hpp
 SerialWin.hpp
 /home/larics/catkin_ws/src/VIV/Communication/SerialWin.hpp
 
@@ -305,8 +305,6 @@ canTopicPublisher.hpp
 /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 errno.h
 -
-vatroslav/CanMsg.h
--
 
 /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 cassert
@@ -415,6 +413,8 @@ EPOSDeclarations.hpp
 /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
 Motor.hpp
 /home/larics/catkin_ws/src/VIV/Devices/Motor.hpp
+../Communication/canTopicPublisher.hpp
+/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 
 /home/larics/catkin_ws/src/VIV/Devices/Sensor.cpp
 Sensor.hpp

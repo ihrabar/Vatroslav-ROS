@@ -11,7 +11,7 @@
 #include "DummyImpl.hpp"
 #include "SerialBoost.hpp"
 #include "CanIxxat.hpp"
-#include "canTopicPublisher.hpp"
+#include "CanAdv.hpp"
 //#include "CanUsb.hpp"
 #include "SerialWin.hpp"
 
@@ -40,7 +40,7 @@ CommImpl& CommImpl::Create( const CommPar& par )
 #endif
 #ifdef VATROSLAV_UNO
 				case CommPar::UNO:
-					return canTopicPublisherSingleton::Instance();
+					return CanAdvSingleton::Instance();
 					break;
 #endif
 				default:

@@ -181,21 +181,6 @@ listener/fast:
 .PHONY : listener/fast
 
 # Convenience name for target.
-beginner_tutorials/CMakeFiles/talker2.dir/rule:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/talker2.dir/rule
-.PHONY : beginner_tutorials/CMakeFiles/talker2.dir/rule
-
-# Convenience name for target.
-talker2: beginner_tutorials/CMakeFiles/talker2.dir/rule
-
-.PHONY : talker2
-
-# fast build rule for target.
-talker2/fast:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/build
-.PHONY : talker2/fast
-
-# Convenience name for target.
 beginner_tutorials/CMakeFiles/talker.dir/rule:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/talker.dir/rule
 .PHONY : beginner_tutorials/CMakeFiles/talker.dir/rule
@@ -684,33 +669,6 @@ src/talker.cpp.s:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/src/talker.cpp.s
 .PHONY : src/talker.cpp.s
 
-src/talker2.o: src/talker2.cpp.o
-
-.PHONY : src/talker2.o
-
-# target to build an object file
-src/talker2.cpp.o:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/src/talker2.cpp.o
-.PHONY : src/talker2.cpp.o
-
-src/talker2.i: src/talker2.cpp.i
-
-.PHONY : src/talker2.i
-
-# target to preprocess a source file
-src/talker2.cpp.i:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/src/talker2.cpp.i
-.PHONY : src/talker2.cpp.i
-
-src/talker2.s: src/talker2.cpp.s
-
-.PHONY : src/talker2.s
-
-# target to generate assembly for a file
-src/talker2.cpp.s:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/src/talker2.cpp.s
-.PHONY : src/talker2.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -722,7 +680,6 @@ help:
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... listener"
-	@echo "... talker2"
 	@echo "... talker"
 	@echo "... beginner_tutorials_gennodejs"
 	@echo "... test"
@@ -761,9 +718,6 @@ help:
 	@echo "... src/talker.o"
 	@echo "... src/talker.i"
 	@echo "... src/talker.s"
-	@echo "... src/talker2.o"
-	@echo "... src/talker2.i"
-	@echo "... src/talker2.s"
 .PHONY : help
 
 

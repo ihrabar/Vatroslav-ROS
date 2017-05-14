@@ -180,7 +180,7 @@ namespace serialization
       stream.next(m.time);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER
+    ROS_DECLARE_ALLINONE_SERIALIZER;
   }; // struct CanMsg_
 
 } // namespace serialization

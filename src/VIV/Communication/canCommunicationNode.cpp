@@ -38,7 +38,6 @@
 
 Vatroslav::CommPtr* p_comm2;
 ros::Publisher can_received;
-
 // global ROS publisher handles
 
 // %Tag(CALLBACK)%
@@ -130,7 +129,7 @@ int main( int argc, char* argv[] )
 	ros::NodeHandle n;
 	ros::Rate loop_rate(1);
 
-	can_received = n.advertise<vatroslav::CanMsg>("receiveCAN", 1000);
+	can_received = n.advertise<vatroslav::CanMsg>("reciveCAN", 1000);
 	
 	Vatroslav::CommPar par( Vatroslav::CommPar::UNO,125000,"can1" );
 	Vatroslav::CommPtr p_comm( Vatroslav::Communication::Create( Vatroslav::Communication::BLOCKING, par ) );

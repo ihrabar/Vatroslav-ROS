@@ -21,6 +21,10 @@
 #include "EPOSDeclarations.hpp"
 #include "Motor.hpp"
 
+#include "../Communication/canTopicPublisher.hpp"
+
+
+
 namespace Vatroslav
 {
 
@@ -410,7 +414,7 @@ class MotorEPOS : public Motor
 	/*!
 
 	 */
-	MotorEPOS( MotorParEPOS motpar);
+	MotorEPOS( MotorParEPOS motpar, canTopicPublisher pComm );
 
 	//! Destructor.
 	/*!
@@ -624,7 +628,7 @@ class MotorEPOS : public Motor
 	 bool motorConnected_;
 
 	 //! Communication parameters
-	 //CommPtr pComm_; nije potrebno jer sad o tome brine canCommunicationNode
+	 canTopicPublisher pComm_; 
 	 
 	 //! SDO Frame COB-ID (Write: 0x600 + Node-ID; Read: 0x580 + Node-ID)
 	 unsigned _COB_ID_;

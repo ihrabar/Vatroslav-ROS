@@ -832,6 +832,7 @@ Communication/CanAdv.o: Communication/CanAdv.cpp.o
 # target to build an object file
 Communication/CanAdv.cpp.o:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/canCommunication.dir/build.make VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o
+	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/CanAdv.cpp.o
 .PHONY : Communication/CanAdv.cpp.o
 
 Communication/CanAdv.i: Communication/CanAdv.cpp.i
@@ -841,6 +842,7 @@ Communication/CanAdv.i: Communication/CanAdv.cpp.i
 # target to preprocess a source file
 Communication/CanAdv.cpp.i:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/canCommunication.dir/build.make VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.i
+	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/CanAdv.cpp.i
 .PHONY : Communication/CanAdv.cpp.i
 
 Communication/CanAdv.s: Communication/CanAdv.cpp.s
@@ -850,6 +852,7 @@ Communication/CanAdv.s: Communication/CanAdv.cpp.s
 # target to generate assembly for a file
 Communication/CanAdv.cpp.s:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/canCommunication.dir/build.make VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.s
+	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/CanAdv.cpp.s
 .PHONY : Communication/CanAdv.cpp.s
 
 Communication/CommImpl.o: Communication/CommImpl.cpp.o

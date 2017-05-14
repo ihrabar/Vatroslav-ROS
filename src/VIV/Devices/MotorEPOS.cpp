@@ -17,6 +17,8 @@
 #include "../Communication/CommPrint.hpp"
 #include "MotorEPOS.hpp"
 
+//#include "../Communication/canTopicPublisher.hpp"
+
 namespace Vatroslav
 {
 
@@ -567,7 +569,8 @@ void MotionParEPOS::SetMotorOperationMode(OperationModes motorOperationMode)
 // Object:						  MotorEPOS
 //=============================================================================
 
-MotorEPOS::MotorEPOS( MotorParEPOS motpar) :   motPar_( motpar )
+MotorEPOS::MotorEPOS( MotorParEPOS motpar, canTopicPublisher pComm ) : pComm_( pComm ),
+                                                motPar_( motpar )
 {
 	//! Clear data buffers for sending and receiving SDO frames
 	memset(_dataSendSDO_, 0, 8);
@@ -1020,61 +1023,61 @@ bool MotorEPOS::UpdateCmdToEPOS_(void)
 		t2 = tp.millitm + (tp.time & 0xFFFFF) * 1000;
 	}while (abs((long)(t1-t2)) < DELAY_TIME_MS);
 
-	/*switch (Params().Interface())
-	{	jer radi samo na CAN
+	switch (pComm_->Params().Interface())
+	{
 		case CommPar::RS232:
 			msg.Id(motPar_.GetMotorID());
 			msg.Data(_dataSendSerial_, 9);
 			msg.Timestamp(pt::microsec_clock::local_time());
 			break;
 
-		case CommPar::CAN:*/
+		case CommPar::CAN:
 			msg.Id(_COB_ID_);
 			msg.Data(_dataSendSDO_, 8);
 			msg.Timestamp(pt::microsec_clock::local_time());
-			//break;
+			break;
 
-	//}
+	}
 
-	success = Send( msg );
+	success = pComm_->Send( msg );
 
 	memset(_dataReceiveSDO_, 0, 8);
 	memset(_dataReceiveSerial_, 0, 9);
 	
 	if ( success )
 	{
-		success =Receive( msg, 1000 );
+		success = pComm_->Receive( msg, 1000 );
 		
-		/*switch (Params().Interface())
+		switch (pComm_->Params().Interface())
 		{
-			case CommPar::CAN:*/
+			case CommPar::CAN:
 				_COB_ID_= msg.Id();
 				memcpy( _dataReceiveSDO_, msg.Data(), msg.Size() );
 				formatReceivedDataSDO_();
-				//break;
-/*
+				break;
+
 			case CommPar::RS232:
 				memcpy( _dataReceiveSerial_, msg.Data(), msg.Size() );
 				formatReceivedDataSerial_();
 				break;
-		}*/
+		}
 	}
 	else
 	{
 		success = false;
-		/*switch (Params().Interface())
+		switch (pComm_->Params().Interface())
 		{
-			case CommPar::CAN:*/
+			case CommPar::CAN:
 				_COB_ID_= msg.Id();
 				memcpy( _dataReceiveSDO_, msg.Data(), msg.Size() );
 				formatReceivedDataSDO_();
-				/*break;
+				break;
 			case CommPar::RS232:
-				Receive( msg, 1000 );
+				pComm_->Receive( msg, 1000 );
 				memcpy( _dataReceiveSerial_, msg.Data(), msg.Size() );
 				formatReceivedDataSerial_();
 				break;
-		}*/
+		}
 	}
 
 	return success;
@@ -2709,7 +2712,7 @@ bool MotorEPOS::Connect( void )
 {
 	motorConnected_ = false;
 
-	if (Open())
+	if (pComm_->Open())
 	{
 		//! Reset any possible errors on startup
 		faultResetUpdate_();
@@ -2744,7 +2747,7 @@ bool MotorEPOS::Disconnect( void )
 	//! Disable voltage on EPOS and leave device in disable mode
 	if (!disableVoltageUpdate_()) return false;
 
-	return Close();
+	return pComm_->Close();
 }
 
 //=============================================================================

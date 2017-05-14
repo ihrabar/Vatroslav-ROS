@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mainControl.dir/Devices/Flipper.cpp.o"
   "CMakeFiles/mainControl.dir/Devices/Kinematics.cpp.o"
   "CMakeFiles/mainControl.dir/Devices/WirelessVIV.cpp.o"
+  "CMakeFiles/mainControl.dir/Communication/CanAdv.cpp.o"
   "CMakeFiles/mainControl.dir/Communication/DummyImpl.cpp.o"
   "CMakeFiles/mainControl.dir/Communication/CommPrint.cpp.o"
   "CMakeFiles/mainControl.dir/Communication/CommPar.cpp.o"

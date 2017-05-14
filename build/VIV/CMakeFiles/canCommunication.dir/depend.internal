@@ -65,6 +65,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o
+ /home/larics/catkin_ws/src/VIV/Communication/CanAdv.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CanIxxat.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommImpl.cpp
  /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
@@ -76,7 +77,6 @@ VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o
  /home/larics/catkin_ws/src/VIV/Communication/SerialTypeDecs.hpp
  /home/larics/catkin_ws/src/VIV/Communication/SerialWin.hpp
  /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
- /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.cpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
@@ -123,6 +123,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o
  /home/larics/catkin_ws/src/VIV/Communication/TimeoutSerial.h
  /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
  /home/larics/catkin_ws/src/VIV/Communication/canCommunicationNode.cpp
+ /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Flipper.hpp
@@ -189,7 +190,6 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o
- /home/larics/catkin_ws/devel/include/vatroslav/CanMsg.h
  /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
@@ -215,7 +215,6 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o
  /opt/ros/kinetic/include/ros/message.h
  /opt/ros/kinetic/include/ros/message_event.h
  /opt/ros/kinetic/include/ros/message_forward.h
- /opt/ros/kinetic/include/ros/message_operations.h
  /opt/ros/kinetic/include/ros/message_traits.h
  /opt/ros/kinetic/include/ros/names.h
  /opt/ros/kinetic/include/ros/node_handle.h
@@ -254,9 +253,12 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o
+ /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
  /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
+ /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+ /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Flipper.cpp
@@ -266,9 +268,12 @@ VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o
  /home/larics/catkin_ws/src/VIV/Devices/MotorEPOS.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Sensor.hpp
 VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o
+ /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
  /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
+ /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+ /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Flipper.hpp
@@ -293,15 +298,20 @@ VIV/CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPrint.hpp
  /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
+ /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+ /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Motor.hpp
  /home/larics/catkin_ws/src/VIV/Devices/MotorEPOS.cpp
  /home/larics/catkin_ws/src/VIV/Devices/MotorEPOS.hpp
 VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o
+ /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
  /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
+ /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+ /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
  /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
@@ -310,10 +320,13 @@ VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o
  /home/larics/catkin_ws/src/VIV/Devices/Sensor.cpp
  /home/larics/catkin_ws/src/VIV/Devices/Sensor.hpp
 VIV/CMakeFiles/canCommunication.dir/Devices/WirelessVIV.cpp.o
+ /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
  /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
  /home/larics/catkin_ws/src/VIV/Communication/TimeoutSerial.h
+ /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+ /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Flipper.hpp

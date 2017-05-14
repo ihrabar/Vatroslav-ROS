@@ -270,19 +270,6 @@ listener/fast:
 .PHONY : listener/fast
 
 #=============================================================================
-# Target rules for targets named talker2
-
-# Build rule for target.
-talker2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 talker2
-.PHONY : talker2
-
-# fast build rule for target.
-talker2/fast:
-	$(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/build
-.PHONY : talker2/fast
-
-#=============================================================================
 # Target rules for targets named talker
 
 # Build rule for target.
@@ -1252,7 +1239,6 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... listener"
-	@echo "... talker2"
 	@echo "... talker"
 	@echo "... beginner_tutorials_gennodejs"
 	@echo "... beginner_tutorials_generate_messages_nodejs"

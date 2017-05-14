@@ -307,7 +307,6 @@ clean: gtest/CMakeFiles/gtest_main.dir/clean
 
 # Convenience name for "all" pass in the directory.
 beginner_tutorials/all: beginner_tutorials/CMakeFiles/listener.dir/all
-beginner_tutorials/all: beginner_tutorials/CMakeFiles/talker2.dir/all
 beginner_tutorials/all: beginner_tutorials/CMakeFiles/talker.dir/all
 beginner_tutorials/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/all
 
@@ -315,7 +314,6 @@ beginner_tutorials/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generat
 
 # Convenience name for "clean" pass in the directory.
 beginner_tutorials/clean: beginner_tutorials/CMakeFiles/listener.dir/clean
-beginner_tutorials/clean: beginner_tutorials/CMakeFiles/talker2.dir/clean
 beginner_tutorials/clean: beginner_tutorials/CMakeFiles/talker.dir/clean
 beginner_tutorials/clean: beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/clean
 beginner_tutorials/clean: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_nodejs.dir/clean
@@ -391,50 +389,13 @@ clean: beginner_tutorials/CMakeFiles/listener.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target beginner_tutorials/CMakeFiles/talker2.dir
-
-# All Build rule for target.
-beginner_tutorials/CMakeFiles/talker2.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
-	$(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/depend
-	$(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=55,56 "Built target talker2"
-.PHONY : beginner_tutorials/CMakeFiles/talker2.dir/all
-
-# Include target in all.
-all: beginner_tutorials/CMakeFiles/talker2.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-beginner_tutorials/CMakeFiles/talker2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/larics/catkin_ws/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/talker2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/larics/catkin_ws/build/CMakeFiles 0
-.PHONY : beginner_tutorials/CMakeFiles/talker2.dir/rule
-
-# Convenience name for target.
-talker2: beginner_tutorials/CMakeFiles/talker2.dir/rule
-
-.PHONY : talker2
-
-# clean rule for target.
-beginner_tutorials/CMakeFiles/talker2.dir/clean:
-	$(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/clean
-.PHONY : beginner_tutorials/CMakeFiles/talker2.dir/clean
-
-# clean rule for target.
-clean: beginner_tutorials/CMakeFiles/talker2.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target beginner_tutorials/CMakeFiles/talker.dir
 
 # All Build rule for target.
 beginner_tutorials/CMakeFiles/talker.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=53,54 "Built target talker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=54,55 "Built target talker"
 .PHONY : beginner_tutorials/CMakeFiles/talker.dir/all
 
 # Include target in all.
@@ -1579,7 +1540,7 @@ VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/all: VIV/CMakeFiles/geometry
 VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/all: VIV/CMakeFiles/_vatroslav_generate_messages_check_deps_CanMsg.dir/all
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/depend
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=60 "Built target vatroslav_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=59 "Built target vatroslav_generate_messages_lisp"
 .PHONY : VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2032,7 +1993,7 @@ clean: VIV/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
 VIV/CMakeFiles/mainControl.dir/all: VIV/CMakeFiles/vatroslav_gencpp.dir/all
 	$(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/depend
 	$(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52 "Built target mainControl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53 "Built target mainControl"
 .PHONY : VIV/CMakeFiles/mainControl.dir/all
 
 # Include target in all.
@@ -2042,7 +2003,7 @@ all: VIV/CMakeFiles/mainControl.dir/all
 
 # Build rule for subdir invocation for target.
 VIV/CMakeFiles/mainControl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/larics/catkin_ws/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/larics/catkin_ws/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 VIV/CMakeFiles/mainControl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/larics/catkin_ws/build/CMakeFiles 0
 .PHONY : VIV/CMakeFiles/mainControl.dir/rule
@@ -2263,7 +2224,7 @@ VIV/CMakeFiles/vatroslav_generate_messages_py.dir/all: VIV/CMakeFiles/geometry_m
 VIV/CMakeFiles/vatroslav_generate_messages_py.dir/all: VIV/CMakeFiles/_vatroslav_generate_messages_check_deps_CanMsg.dir/all
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_py.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_py.dir/depend
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_py.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=62,63 "Built target vatroslav_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=61,62 "Built target vatroslav_generate_messages_py"
 .PHONY : VIV/CMakeFiles/vatroslav_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2457,7 +2418,7 @@ VIV/CMakeFiles/vatroslav_generate_messages_nodejs.dir/all: VIV/CMakeFiles/geomet
 VIV/CMakeFiles/vatroslav_generate_messages_nodejs.dir/all: VIV/CMakeFiles/_vatroslav_generate_messages_check_deps_CanMsg.dir/all
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_nodejs.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_nodejs.dir/depend
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_nodejs.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=61 "Built target vatroslav_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=60 "Built target vatroslav_generate_messages_nodejs"
 .PHONY : VIV/CMakeFiles/vatroslav_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2683,7 +2644,7 @@ VIV/CMakeFiles/vatroslav_generate_messages_cpp.dir/all: VIV/CMakeFiles/geometry_
 VIV/CMakeFiles/vatroslav_generate_messages_cpp.dir/all: VIV/CMakeFiles/_vatroslav_generate_messages_check_deps_CanMsg.dir/all
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_cpp.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_cpp.dir/depend
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_cpp.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=57 "Built target vatroslav_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=56 "Built target vatroslav_generate_messages_cpp"
 .PHONY : VIV/CMakeFiles/vatroslav_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2717,7 +2678,7 @@ VIV/CMakeFiles/vatroslav_generate_messages_eus.dir/all: VIV/CMakeFiles/geometry_
 VIV/CMakeFiles/vatroslav_generate_messages_eus.dir/all: VIV/CMakeFiles/_vatroslav_generate_messages_check_deps_CanMsg.dir/all
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_eus.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_eus.dir/depend
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_eus.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=58,59 "Built target vatroslav_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=57,58 "Built target vatroslav_generate_messages_eus"
 .PHONY : VIV/CMakeFiles/vatroslav_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.

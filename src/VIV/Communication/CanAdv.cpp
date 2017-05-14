@@ -198,7 +198,7 @@ bool CanAdv::Receive(CommMsg& msg, unsigned short timeout)
 	CanStatusPar_t status;
 	if ( open_ )
 	{
-	//VREMENSKO CEKANJE SE IYVODI U CANTOPICPUBLISHERU, OVDJE TO TREBA IYBACITI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	
+	///*	
 		//std::cout << "Hra_test_RECEIVE_1->errno: " << errno << " fd: " << fd << std::endl;
 		t1=boost::posix_time::microsec_clock::local_time();
 		//std::cout << "Hra_test_RECEIVE_2->errno: " << errno << " fd: " << fd << std::endl;

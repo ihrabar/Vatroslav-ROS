@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/larics/catkin_ws/devel/include/vatroslav/CanMsg.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/larics/catkin_ws/src/VIV/Communication/CanAdv.cpp
 ros/ros.h
 /home/larics/catkin_ws/src/VIV/Communication/ros/ros.h
@@ -73,8 +89,8 @@ SerialBoost.hpp
 /home/larics/catkin_ws/src/VIV/Communication/SerialBoost.hpp
 CanIxxat.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CanIxxat.hpp
-canTopicPublisher.hpp
-/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
+CanAdv.hpp
+/home/larics/catkin_ws/src/VIV/Communication/CanAdv.hpp
 SerialWin.hpp
 /home/larics/catkin_ws/src/VIV/Communication/SerialWin.hpp
 
@@ -212,6 +228,36 @@ boost/asio.hpp
 
 /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
 
+/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.cpp
+ros/ros.h
+/home/larics/catkin_ws/src/VIV/Communication/ros/ros.h
+stdlib.h
+-
+string.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+unistd.h
+-
+sys/ioctl.h
+-
+stdio.h
+-
+cstring
+-
+algorithm
+-
+iostream
+-
+canTopicPublisher.hpp
+/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
+errno.h
+-
+
 /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 cassert
 -
@@ -319,6 +365,8 @@ EPOSDeclarations.hpp
 /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
 Motor.hpp
 /home/larics/catkin_ws/src/VIV/Devices/Motor.hpp
+../Communication/canTopicPublisher.hpp
+/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 
 /home/larics/catkin_ws/src/VIV/Devices/Sensor.cpp
 Sensor.hpp
@@ -383,8 +431,10 @@ WirelessVIV.hpp
 /home/larics/catkin_ws/src/VIV/Devices/WirelessVIV.hpp
 unistd.h
 -
-canTopicPublisher.hpp
-/home/larics/catkin_ws/src/VIV/Devices/canTopicPublisher.hpp
+vatroslav/CanMsg.h
+-
+../Communication/canTopicPublisher.hpp
+/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h

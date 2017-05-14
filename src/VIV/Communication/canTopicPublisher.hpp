@@ -2,10 +2,11 @@
 	\brief	CAN communication implementation for the Advantech ??? CAN board.
 
  */
-#ifdef VATROSLAV_UNO
+//#ifdef VATROSLAV_UNO
 
 //#ifndef VATROSLAV_CAN_ADV_HPP
-#define VATROSLAV_CAN_ADV_HPP
+#ifndef VATROSLAV_CAN_PUBLISHER_HPP
+#define VATROSLAV_CAN_PUBLISHER_HPP
 
 #include <cassert>
 
@@ -60,7 +61,11 @@ class canTopicPublisher : public CommImpl
 		return par_;
 	}
 
- private:
+//private:
+
+	//! Copy constructor
+	canTopicPublisher( const canTopicPublisher& original );
+
 	
 	//! Constructor
 	/*!
@@ -69,8 +74,7 @@ class canTopicPublisher : public CommImpl
 	 */
 	canTopicPublisher( );
 
-	//! Copy constructor
-	canTopicPublisher( const canTopicPublisher& original );
+
 
 	//! Destructor
 	~canTopicPublisher( );
