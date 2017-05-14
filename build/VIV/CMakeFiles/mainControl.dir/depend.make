@@ -64,7 +64,6 @@ VIV/CMakeFiles/mainControl.dir/Communication/CanAdv.cpp.o: /opt/ros/kinetic/incl
 VIV/CMakeFiles/mainControl.dir/Communication/CanAdv.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 VIV/CMakeFiles/mainControl.dir/Communication/CanAdv.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
-VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CanAdv.hpp
 VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CanIxxat.hpp
 VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommImpl.cpp
 VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
@@ -76,6 +75,7 @@ VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin
 VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/SerialTypeDecs.hpp
 VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/SerialWin.hpp
 VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+VIV/CMakeFiles/mainControl.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 
 VIV/CMakeFiles/mainControl.dir/Communication/CommPar.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommPar.cpp
 VIV/CMakeFiles/mainControl.dir/Communication/CommPar.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp

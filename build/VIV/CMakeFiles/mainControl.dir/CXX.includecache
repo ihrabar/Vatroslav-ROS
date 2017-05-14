@@ -73,8 +73,8 @@ SerialBoost.hpp
 /home/larics/catkin_ws/src/VIV/Communication/SerialBoost.hpp
 CanIxxat.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CanIxxat.hpp
-CanAdv.hpp
-/home/larics/catkin_ws/src/VIV/Communication/CanAdv.hpp
+canTopicPublisher.hpp
+/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 SerialWin.hpp
 /home/larics/catkin_ws/src/VIV/Communication/SerialWin.hpp
 
@@ -211,6 +211,16 @@ boost/asio.hpp
 -
 
 /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+
+/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
+cassert
+-
+loki/Singleton.h
+-
+can4linux.h
+/home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+CommImpl.hpp
+/home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
 
 /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
 boost/shared_ptr.hpp
@@ -373,6 +383,8 @@ WirelessVIV.hpp
 /home/larics/catkin_ws/src/VIV/Devices/WirelessVIV.hpp
 unistd.h
 -
+canTopicPublisher.hpp
+/home/larics/catkin_ws/src/VIV/Devices/canTopicPublisher.hpp
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h

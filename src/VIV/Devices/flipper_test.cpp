@@ -14,11 +14,11 @@
 #include "../Communication/SerialBoost.hpp"
 #include "WirelessVIV.hpp"
 #include <unistd.h>
-
+#include "canTopicPublisher.hpp"
 //using namespace std;
 
 using namespace Vatroslav;
-ros::Publisher sendToCAN;
+//ros::Publisher sendToCAN; //definirano u canTopicPublisher
 
 
 int main( int argc, char* argv[] )
@@ -28,7 +28,7 @@ int main( int argc, char* argv[] )
 	ros::NodeHandle n;
 	//ros::Rate loop_rate(1);
 	
-	sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
+	//sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000); //definirano u canTopicPublisher
 
 	
 
@@ -51,16 +51,16 @@ int main( int argc, char* argv[] )
 	MotorParEPOS par44( 4, par2, par3 );
 	//std::cout << "Hra_test_3" << std::endl;
 	
-	boost::shared_ptr<MotorEPOS> motor1(new MotorEPOS( par41, p_comm ));
-	boost::shared_ptr<MotorEPOS> motor2(new MotorEPOS( par42, p_comm ));
-	boost::shared_ptr<MotorEPOS> motor3(new MotorEPOS( par43, p_comm ));
-	boost::shared_ptr<MotorEPOS> motor4(new MotorEPOS( par44, p_comm ));	
+	boost::shared_ptr<MotorEPOS> motor1(new MotorEPOS( par41));
+	boost::shared_ptr<MotorEPOS> motor2(new MotorEPOS( par42));
+	boost::shared_ptr<MotorEPOS> motor3(new MotorEPOS( par43));
+	boost::shared_ptr<MotorEPOS> motor4(new MotorEPOS( par44));	
 	//std::cout << "Hra_test_4" << std::endl;
 	
-	boost::shared_ptr<LinAct> lin1(new LinAct(101,p_comm));//stvoriti svoje nodove ya lin act??????????????
-	boost::shared_ptr<LinAct> lin2(new LinAct(102,p_comm));
-	boost::shared_ptr<LinAct> lin3(new LinAct(103,p_comm));
-	boost::shared_ptr<LinAct> lin4(new LinAct(104,p_comm));
+	boost::shared_ptr<LinAct> lin1(new LinAct(101));//stvoriti svoje nodove ya lin act??????????????
+	boost::shared_ptr<LinAct> lin2(new LinAct(102));
+	boost::shared_ptr<LinAct> lin3(new LinAct(103));
+	boost::shared_ptr<LinAct> lin4(new LinAct(104));
 
 	
 	//std::cout << "Hra_test_5" << std::endl;
@@ -82,23 +82,23 @@ int main( int argc, char* argv[] )
 	boost::shared_ptr<Kinematics> kin(new Kinematics(flipper2,flipper1,flipper3,flipper4));
 	
 	//std::cout << "Hra_test_7" << std::endl;
-	boost::shared_ptr<GasSensor> gas1(new GasSensor(0,p_comm));
-	boost::shared_ptr<GasSensor> gas2(new GasSensor(1,p_comm));
-	boost::shared_ptr<GasSensor> gas3(new GasSensor(2,p_comm));
+	boost::shared_ptr<GasSensor> gas1(new GasSensor(0));
+	boost::shared_ptr<GasSensor> gas2(new GasSensor(1));
+	boost::shared_ptr<GasSensor> gas3(new GasSensor(2));
 
 	gas1->Connect();
 	gas2->Connect();
 	gas3->Connect();
 
 	//std::cout << "Hra_test_8" << std::endl;
-	boost::shared_ptr<PowerSensor> pow1(new PowerSensor(0,p_comm));
-	boost::shared_ptr<PowerSensor> pow2(new PowerSensor(1,p_comm));
-	boost::shared_ptr<PowerSensor> pow3(new PowerSensor(2,p_comm));
-	boost::shared_ptr<PowerSensor> pow4(new PowerSensor(3,p_comm));
-	boost::shared_ptr<PowerSensor> pow5(new PowerSensor(4,p_comm));
-	boost::shared_ptr<PowerSensor> pow6(new PowerSensor(5,p_comm));
+	boost::shared_ptr<PowerSensor> pow1(new PowerSensor(0));
+	boost::shared_ptr<PowerSensor> pow2(new PowerSensor(1));
+	boost::shared_ptr<PowerSensor> pow3(new PowerSensor(2));
+	boost::shared_ptr<PowerSensor> pow4(new PowerSensor(3));
+	boost::shared_ptr<PowerSensor> pow5(new PowerSensor(4));
+	boost::shared_ptr<PowerSensor> pow6(new PowerSensor(5));
 
-	boost::shared_ptr<RotateCamera> rot(new RotateCamera(p_comm));
+	boost::shared_ptr<RotateCamera> rot(new RotateCamera());
 
 
 	//std::cout << "Hra_test_9" << std::endl;
@@ -126,8 +126,8 @@ int main( int argc, char* argv[] )
 
 	//std::cout << "Hra_test_12" << std::endl;
 
-	boost::shared_ptr<TemperatureSensor> temp1(new TemperatureSensor(300,p_comm));
-	boost::shared_ptr<TemperatureSensor> temp2(new TemperatureSensor(402,p_comm));
+	boost::shared_ptr<TemperatureSensor> temp1(new TemperatureSensor(300));
+	boost::shared_ptr<TemperatureSensor> temp2(new TemperatureSensor(402));
 
 	//std::cout << "Hra_test_13" << std::endl;
 
@@ -203,7 +203,7 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 	lin2->ReadConstants();
 	lin3->ReadConstants();
 	lin4->ReadConstants();
-	boost::shared_ptr<Power> pow(new Power(p_comm));
+	boost::shared_ptr<Power> pow(new Power());
 	pow->Connect();	
 	pow->SetStateDrive(true);
 	pow->UpdateWrite();
@@ -265,7 +265,7 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 	CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
 	//std::cout << "Hra_test_19.1" << std::endl;	
 	
-	while (p_comm->Receive(msg,30));//{std::cout << "Hra_test_19.1_zapeo_while" << std::endl;};//ovo je praznjenje buffera
+	while (Receive(msg,30));//{std::cout << "Hra_test_19.1_zapeo_while" << std::endl;};//ovo je praznjenje buffera
 	//std::cout << "Hra_test_19.2" << std::endl;	
 	wir.EmptyBuffer();
 	int brojac=0;
@@ -273,7 +273,7 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 	while (1){
 		time=boost::posix_time::microsec_clock::local_time() ;
 		//std::cout<<time<<std::endl;
-		while (p_comm->Receive(msg,10));
+		while (Receive(msg,10));
 		if (pow->GetStateDrive()){
 			kin->UpdateWrite();
 			kin->UpdateRead();

@@ -410,7 +410,7 @@ class MotorEPOS : public Motor
 	/*!
 
 	 */
-	MotorEPOS( MotorParEPOS motpar, CommPtr pComm );
+	MotorEPOS( MotorParEPOS motpar);
 
 	//! Destructor.
 	/*!
@@ -624,7 +624,7 @@ class MotorEPOS : public Motor
 	 bool motorConnected_;
 
 	 //! Communication parameters
-	 CommPtr pComm_; 
+	 //CommPtr pComm_; nije potrebno jer sad o tome brine canCommunicationNode
 	 
 	 //! SDO Frame COB-ID (Write: 0x600 + Node-ID; Read: 0x580 + Node-ID)
 	 unsigned _COB_ID_;

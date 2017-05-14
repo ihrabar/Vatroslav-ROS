@@ -64,7 +64,6 @@ VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o: /opt/ros/kinetic
 VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
-VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CanAdv.hpp
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CanIxxat.hpp
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommImpl.cpp
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
@@ -76,6 +75,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/c
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/SerialTypeDecs.hpp
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/SerialWin.hpp
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
+VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommPar.cpp
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
@@ -188,6 +188,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o: /o
 VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 
+VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /home/larics/catkin_ws/devel/include/vatroslav/CanMsg.h
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
@@ -213,6 +214,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /opt/
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /opt/ros/kinetic/include/ros/message.h
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /opt/ros/kinetic/include/ros/message_event.h
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /opt/ros/kinetic/include/ros/message_forward.h
+VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /opt/ros/kinetic/include/ros/message_operations.h
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /opt/ros/kinetic/include/ros/message_traits.h
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /opt/ros/kinetic/include/ros/names.h
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /opt/ros/kinetic/include/ros/node_handle.h

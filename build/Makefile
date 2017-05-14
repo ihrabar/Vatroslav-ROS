@@ -270,6 +270,19 @@ listener/fast:
 .PHONY : listener/fast
 
 #=============================================================================
+# Target rules for targets named talker2
+
+# Build rule for target.
+talker2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 talker2
+.PHONY : talker2
+
+# fast build rule for target.
+talker2/fast:
+	$(MAKE) -f beginner_tutorials/CMakeFiles/talker2.dir/build.make beginner_tutorials/CMakeFiles/talker2.dir/build
+.PHONY : talker2/fast
+
+#=============================================================================
 # Target rules for targets named talker
 
 # Build rule for target.
@@ -881,6 +894,19 @@ tf2_msgs_generate_messages_py/fast:
 .PHONY : tf2_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named mainControl
+
+# Build rule for target.
+mainControl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mainControl
+.PHONY : mainControl
+
+# fast build rule for target.
+mainControl/fast:
+	$(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/build
+.PHONY : mainControl/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -1050,6 +1076,19 @@ vatroslav_generate_messages_nodejs/fast:
 .PHONY : vatroslav_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_cpp
+
+# Build rule for target.
+tf2_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_cpp
+.PHONY : tf2_msgs_generate_messages_cpp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f VIV/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make VIV/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
+.PHONY : tf2_msgs_generate_messages_cpp/fast
+
+#=============================================================================
 # Target rules for targets named vatroslav_genlisp
 
 # Build rule for target.
@@ -1192,32 +1231,6 @@ vatroslav_gennodejs/fast:
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_gennodejs.dir/build.make VIV/CMakeFiles/vatroslav_gennodejs.dir/build
 .PHONY : vatroslav_gennodejs/fast
 
-#=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_cpp
-
-# Build rule for target.
-tf2_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_cpp
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f VIV/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make VIV/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named TestCanCommunication
-
-# Build rule for target.
-TestCanCommunication: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TestCanCommunication
-.PHONY : TestCanCommunication
-
-# fast build rule for target.
-TestCanCommunication/fast:
-	$(MAKE) -f VIV/CMakeFiles/TestCanCommunication.dir/build.make VIV/CMakeFiles/TestCanCommunication.dir/build
-.PHONY : TestCanCommunication/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1239,6 +1252,7 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... listener"
+	@echo "... talker2"
 	@echo "... talker"
 	@echo "... beginner_tutorials_gennodejs"
 	@echo "... beginner_tutorials_generate_messages_nodejs"
@@ -1286,6 +1300,7 @@ help:
 	@echo "... tf_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... mainControl"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_eus"
@@ -1299,6 +1314,7 @@ help:
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... vatroslav_generate_messages_nodejs"
+	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... vatroslav_genlisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_eus"
@@ -1310,8 +1326,6 @@ help:
 	@echo "... vatroslav_geneus"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... vatroslav_gennodejs"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... TestCanCommunication"
 .PHONY : help
 
 
