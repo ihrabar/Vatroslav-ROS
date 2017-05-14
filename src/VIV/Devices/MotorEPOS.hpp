@@ -414,7 +414,7 @@ class MotorEPOS : public Motor
 	/*!
 
 	 */
-	MotorEPOS( MotorParEPOS motpar, canTopicPublisher pComm );
+	MotorEPOS( MotorParEPOS motpar, CommPtr pComm );
 
 	//! Destructor.
 	/*!
@@ -628,7 +628,7 @@ class MotorEPOS : public Motor
 	 bool motorConnected_;
 
 	 //! Communication parameters
-	 canTopicPublisher pComm_; 
+	 CommPtr pComm_; 
 	 
 	 //! SDO Frame COB-ID (Write: 0x600 + Node-ID; Read: 0x580 + Node-ID)
 	 unsigned _COB_ID_;

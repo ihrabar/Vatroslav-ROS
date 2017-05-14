@@ -17,7 +17,6 @@
 #include "../Communication/CommPrint.hpp"
 #include "MotorEPOS.hpp"
 
-//#include "../Communication/canTopicPublisher.hpp"
 
 namespace Vatroslav
 {
@@ -569,7 +568,7 @@ void MotionParEPOS::SetMotorOperationMode(OperationModes motorOperationMode)
 // Object:						  MotorEPOS
 //=============================================================================
 
-MotorEPOS::MotorEPOS( MotorParEPOS motpar, canTopicPublisher pComm ) : pComm_( pComm ),
+MotorEPOS::MotorEPOS( MotorParEPOS motpar, CommPtr pComm ) : pComm_( pComm ),
                                                 motPar_( motpar )
 {
 	//! Clear data buffers for sending and receiving SDO frames

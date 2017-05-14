@@ -32,13 +32,13 @@ int main( int argc, char* argv[] )
 	
 	sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
 
-	canTopicPublisher p_comm();
+	//CommPtr p_comm();
 
 		//CommPar par( CommPar::UNO,125000,"can1" );
 
 //	std::cout << par << std::endl;	
 //	if( CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) ) ) printf("Hra_test_1\n");
-	//CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
+	CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
 //	p_comm->Open();
 	
 	//int debug;
