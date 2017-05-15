@@ -1098,7 +1098,6 @@ Communication/canTopicPublisher.o: Communication/canTopicPublisher.cpp.o
 
 # target to build an object file
 Communication/canTopicPublisher.cpp.o:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/canCommunication.dir/build.make VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o
 .PHONY : Communication/canTopicPublisher.cpp.o
 
@@ -1108,7 +1107,6 @@ Communication/canTopicPublisher.i: Communication/canTopicPublisher.cpp.i
 
 # target to preprocess a source file
 Communication/canTopicPublisher.cpp.i:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/canCommunication.dir/build.make VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.i
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.i
 .PHONY : Communication/canTopicPublisher.cpp.i
 
@@ -1118,7 +1116,6 @@ Communication/canTopicPublisher.s: Communication/canTopicPublisher.cpp.s
 
 # target to generate assembly for a file
 Communication/canTopicPublisher.cpp.s:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/canCommunication.dir/build.make VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.s
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.s
 .PHONY : Communication/canTopicPublisher.cpp.s
 
