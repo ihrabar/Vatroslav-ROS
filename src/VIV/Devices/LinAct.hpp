@@ -5,7 +5,6 @@
 #include "../Communication/Communication.hpp"
 #include "../Communication/canTopicPublisher.hpp"
 
-
 namespace Vatroslav
 {
 

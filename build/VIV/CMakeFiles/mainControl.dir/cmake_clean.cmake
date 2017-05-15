@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o"
   "CMakeFiles/mainControl.dir/Devices/MotorEPOS.cpp.o"
-  "CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o"
   "CMakeFiles/mainControl.dir/Devices/Sensor.cpp.o"
   "CMakeFiles/mainControl.dir/Devices/Flipper.cpp.o"
   "CMakeFiles/mainControl.dir/Devices/Kinematics.cpp.o"
@@ -15,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mainControl.dir/Communication/SerialBoost.cpp.o"
   "CMakeFiles/mainControl.dir/Communication/TimeoutSerial.cpp.o"
   "CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o"
+  "CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o"
   "/home/larics/catkin_ws/devel/lib/vatroslav/mainControl.pdb"
   "/home/larics/catkin_ws/devel/lib/vatroslav/mainControl"
 )

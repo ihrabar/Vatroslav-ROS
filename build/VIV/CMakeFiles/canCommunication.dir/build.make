@@ -105,33 +105,9 @@ VIV/CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o.provides: VIV/CMakeF
 VIV/CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o.provides.build: VIV/CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o
 
 
-VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
-VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o: /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o"
-	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o -c /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp
-
-VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.i"
-	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp > CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.i
-
-VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.s"
-	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp -o CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.s
-
-VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.requires:
-
-.PHONY : VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.requires
-
-VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.provides: VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.requires
-	$(MAKE) -f VIV/CMakeFiles/canCommunication.dir/build.make VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.provides.build
-.PHONY : VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.provides
-
-VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.provides.build: VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o
-
-
 VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o: /home/larics/catkin_ws/src/VIV/Devices/Sensor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o -c /home/larics/catkin_ws/src/VIV/Devices/Sensor.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.i: cmake_force
@@ -155,7 +131,7 @@ VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o.provides.build: VIV/CMa
 
 VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o: /home/larics/catkin_ws/src/VIV/Devices/Flipper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o -c /home/larics/catkin_ws/src/VIV/Devices/Flipper.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.i: cmake_force
@@ -179,7 +155,7 @@ VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o.provides.build: VIV/CM
 
 VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o: /home/larics/catkin_ws/src/VIV/Devices/Kinematics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o -c /home/larics/catkin_ws/src/VIV/Devices/Kinematics.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.i: cmake_force
@@ -203,7 +179,7 @@ VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o.provides.build: VIV
 
 VIV/CMakeFiles/canCommunication.dir/Devices/WirelessVIV.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Devices/WirelessVIV.cpp.o: /home/larics/catkin_ws/src/VIV/Devices/WirelessVIV.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/WirelessVIV.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/WirelessVIV.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Devices/WirelessVIV.cpp.o -c /home/larics/catkin_ws/src/VIV/Devices/WirelessVIV.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Devices/WirelessVIV.cpp.i: cmake_force
@@ -227,7 +203,7 @@ VIV/CMakeFiles/canCommunication.dir/Devices/WirelessVIV.cpp.o.provides.build: VI
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CanAdv.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/CanAdv.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.i: cmake_force
@@ -251,7 +227,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/CanAdv.cpp.o.provides.build: V
 
 VIV/CMakeFiles/canCommunication.dir/Communication/DummyImpl.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/DummyImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/DummyImpl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/DummyImpl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/DummyImpl.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/DummyImpl.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/DummyImpl.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/DummyImpl.cpp.i: cmake_force
@@ -275,7 +251,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/DummyImpl.cpp.o.provides.build
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPrint.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPrint.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommPrint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/CommPrint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/CommPrint.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/CommPrint.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/CommPrint.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPrint.cpp.i: cmake_force
@@ -299,7 +275,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/CommPrint.cpp.o.provides.build
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommPar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/CommPar.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.i: cmake_force
@@ -323,7 +299,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/CommPar.cpp.o.provides.build: 
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/CommImpl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/CommImpl.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.i: cmake_force
@@ -347,7 +323,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/CommImpl.cpp.o.provides.build:
 
 VIV/CMakeFiles/canCommunication.dir/Communication/Communication.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/Communication.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/Communication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/Communication.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/Communication.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/Communication.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/Communication.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/Communication.cpp.i: cmake_force
@@ -371,7 +347,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/Communication.cpp.o.provides.b
 
 VIV/CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/SerialBoost.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/SerialBoost.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.i: cmake_force
@@ -395,7 +371,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o.provides.bui
 
 VIV/CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/TimeoutSerial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/TimeoutSerial.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.i: cmake_force
@@ -419,7 +395,7 @@ VIV/CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o.provides.b
 
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.cpp
 
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.i: cmake_force
@@ -441,11 +417,34 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o.provid
 VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o.provides.build: VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o
 
 
+VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o: VIV/CMakeFiles/canCommunication.dir/flags.make
+VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o: /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o"
+	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o -c /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp
+
+VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.i"
+	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp > CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.i
+
+VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.s"
+	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp -o CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.s
+
+VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.requires:
+
+.PHONY : VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.requires
+
+VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.provides: VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.requires
+	$(MAKE) -f VIV/CMakeFiles/canCommunication.dir/build.make VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.provides.build
+.PHONY : VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.provides
+
+VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.provides.build: VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o
+
+
 # Object files for target canCommunication
 canCommunication_OBJECTS = \
 "CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o" \
 "CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o" \
-"CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o" \
 "CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o" \
 "CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o" \
 "CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o" \
@@ -458,14 +457,14 @@ canCommunication_OBJECTS = \
 "CMakeFiles/canCommunication.dir/Communication/Communication.cpp.o" \
 "CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o" \
 "CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o" \
-"CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o"
+"CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o" \
+"CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o"
 
 # External object files for target canCommunication
 canCommunication_EXTERNAL_OBJECTS =
 
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o
-/home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o
@@ -479,6 +478,7 @@ canCommunication_EXTERNAL_OBJECTS =
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o
+/home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: VIV/CMakeFiles/canCommunication.dir/build.make
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: /opt/ros/kinetic/lib/libtf.so
 /home/larics/catkin_ws/devel/lib/vatroslav/canCommunication: /opt/ros/kinetic/lib/libtf2_ros.so
@@ -515,7 +515,6 @@ VIV/CMakeFiles/canCommunication.dir/build: /home/larics/catkin_ws/devel/lib/vatr
 
 VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o.requires
 VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o.requires
-VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.requires
 VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o.requires
 VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o.requires
 VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o.requires
@@ -529,6 +528,7 @@ VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.di
 VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o.requires
 VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o.requires
 VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o.requires
+VIV/CMakeFiles/canCommunication.dir/requires: VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o.requires
 
 .PHONY : VIV/CMakeFiles/canCommunication.dir/requires
 

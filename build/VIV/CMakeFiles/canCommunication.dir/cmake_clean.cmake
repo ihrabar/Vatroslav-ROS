@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o"
   "CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o"
-  "CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o"
   "CMakeFiles/canCommunication.dir/Devices/Sensor.cpp.o"
   "CMakeFiles/canCommunication.dir/Devices/Flipper.cpp.o"
   "CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o"
@@ -15,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/canCommunication.dir/Communication/SerialBoost.cpp.o"
   "CMakeFiles/canCommunication.dir/Communication/TimeoutSerial.cpp.o"
   "CMakeFiles/canCommunication.dir/Communication/canTopicPublisher.cpp.o"
+  "CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o"
   "/home/larics/catkin_ws/devel/lib/vatroslav/canCommunication.pdb"
   "/home/larics/catkin_ws/devel/lib/vatroslav/canCommunication"
 )

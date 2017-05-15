@@ -379,10 +379,6 @@ Flipper.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CommPrint.hpp
 LinAct.hpp
 /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
-../Communication/CommMsg.hpp
-/home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
-vatroslav/CanMsg.h
--
 
 /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
 Device.hpp

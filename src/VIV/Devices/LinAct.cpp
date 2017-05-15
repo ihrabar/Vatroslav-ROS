@@ -1,7 +1,6 @@
 #include "../Communication/CommPrint.hpp"
 #include "LinAct.hpp"
-#include "../Communication/CommMsg.hpp"
-#include <vatroslav/CanMsg.h>
+
 
 namespace Vatroslav{
 	namespace pt = boost::posix_time;
@@ -33,19 +32,21 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 		CommMsg msg( id_, data, 2, pt::microsec_clock::local_time() );
 		if (set_state==1){
 //			std::cout<<msg<<std::endl;
-			Send(msg);
+			pComm_->Send(msg);
+
 		} else if (set_state==2){
 			data[0]=2;
 			data[1]=slow_;
 			msg.Data(data,2);
 //			std::cout<<msg<<std::endl;
-			Send(msg);
+			pComm_->Send(msg);
+
 		} else if (set_state==3){
 			data[0]=3;
 			msg.Data(data,1);
 //			std::cout<<msg<<std::endl;
 
-			Send(msg);
+			pComm_->Send(msg);
 		}
 		if (set_state==21){
 			data[0]=21;
@@ -53,7 +54,7 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 			data[2]=value_/256;
 			data[3]=value_%256;
 			msg.Data(data,4);
-			Send(msg);
+			pComm_->Send(msg);
 
 		}
 		if (set_state==22){
@@ -62,7 +63,7 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 			data[2]=value_/256;
 			data[3]=value_%256;
 			msg.Data(data,4);
-			Send(msg);
+			pComm_->Send(msg);
 		}
 		if (set_state==23){
 			data[0]=21;
@@ -70,7 +71,7 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 			data[2]=value_/256;
 			data[3]=value_%256;
 			msg.Data(data,4);
-			Send(msg);
+			pComm_->Send(msg);
 		}
 		set_state=0;
 		slow_=0;
@@ -85,8 +86,8 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 	
 		data[0]=4;
 		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
-		if (Send(msg)){
-			if (Receive( msg, 1000 )){
+		if (pComm_->Send(msg)){
+			if (pComm_->Receive( msg, 1000 )){
 				current_=(unsigned char) msg.Data()[1]*256+(unsigned char)msg.Data()[2];
 				position_=(unsigned char) msg.Data()[3]*256+(unsigned char)msg.Data()[4];
 				status_=msg.Data()[5];
@@ -105,8 +106,8 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 		char data[] = { 4};
 		data[0]=4;
 		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
-		if (Send(msg)){
-			if (Receive( msg, 1000 )){
+		if (pComm_->Send(msg)){
+			if (pComm_->Receive( msg, 1000 )){
 				if (msg.Size()>0) {
 					status_=msg.Data()[0];
 					open_=true;
@@ -176,8 +177,8 @@ LinAct::LinAct(int id, CommPtr pComm) : status_( 4 ),
 		set_state=20;
 		char data[] = {20};
 		CommMsg msg( id_, data, 1, pt::microsec_clock::local_time() );
-		if (Send(msg)){
-			if (Receive( msg, 1000 )){
+		if (pComm_->Send(msg)){
+			if (pComm_->Receive( msg, 1000 )){
 				if (msg.Size()>6) {
 					if (msg.Data()[0]==20){
 //						std::cout<<msg<<std::endl;
