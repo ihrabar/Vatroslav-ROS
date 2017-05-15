@@ -59,12 +59,12 @@
 /home/larics/catkin_ws/build/VIV/CMakeFiles/edit_cache.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/install/strip.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/list_install_components.dir
+/home/larics/catkin_ws/build/VIV/CMakeFiles/install.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/actionlib_generate_messages_nodejs.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/rebuild_cache.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/sensor_msgs_generate_messages_py.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
-/home/larics/catkin_ws/build/VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/tf_generate_messages_nodejs.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/actionlib_generate_messages_lisp.dir
@@ -105,5 +105,6 @@
 /home/larics/catkin_ws/build/VIV/CMakeFiles/vatroslav_geneus.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/tf2_msgs_generate_messages_lisp.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/vatroslav_gennodejs.dir
+/home/larics/catkin_ws/build/VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir
+/home/larics/catkin_ws/build/VIV/CMakeFiles/TopicPublisher.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/install/local.dir
-/home/larics/catkin_ws/build/VIV/CMakeFiles/install.dir

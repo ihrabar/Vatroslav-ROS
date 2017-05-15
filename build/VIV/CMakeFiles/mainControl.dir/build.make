@@ -504,6 +504,7 @@ mainControl_EXTERNAL_OBJECTS =
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: /usr/lib/i386-linux-gnu/libboost_atomic.so
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: /usr/lib/i386-linux-gnu/libpthread.so
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: /usr/lib/i386-linux-gnu/libconsole_bridge.so
+/home/larics/catkin_ws/devel/lib/vatroslav/mainControl: /home/larics/catkin_ws/devel/lib/libTopicPublisher.so
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable /home/larics/catkin_ws/devel/lib/vatroslav/mainControl"
 	cd /home/larics/catkin_ws/build/VIV && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mainControl.dir/link.txt --verbose=$(VERBOSE)

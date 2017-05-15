@@ -699,19 +699,6 @@ sensor_msgs_generate_messages_lisp/fast:
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named vatroslav_generate_messages_lisp
-
-# Build rule for target.
-vatroslav_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vatroslav_generate_messages_lisp
-.PHONY : vatroslav_generate_messages_lisp
-
-# fast build rule for target.
-vatroslav_generate_messages_lisp/fast:
-	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build
-.PHONY : vatroslav_generate_messages_lisp/fast
-
-#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -1218,6 +1205,32 @@ vatroslav_gennodejs/fast:
 	$(MAKE) -f VIV/CMakeFiles/vatroslav_gennodejs.dir/build.make VIV/CMakeFiles/vatroslav_gennodejs.dir/build
 .PHONY : vatroslav_gennodejs/fast
 
+#=============================================================================
+# Target rules for targets named vatroslav_generate_messages_lisp
+
+# Build rule for target.
+vatroslav_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vatroslav_generate_messages_lisp
+.PHONY : vatroslav_generate_messages_lisp
+
+# fast build rule for target.
+vatroslav_generate_messages_lisp/fast:
+	$(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build
+.PHONY : vatroslav_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named TopicPublisher
+
+# Build rule for target.
+TopicPublisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TopicPublisher
+.PHONY : TopicPublisher
+
+# fast build rule for target.
+TopicPublisher/fast:
+	$(MAKE) -f VIV/CMakeFiles/TopicPublisher.dir/build.make VIV/CMakeFiles/TopicPublisher.dir/build
+.PHONY : TopicPublisher/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1272,7 +1285,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... vatroslav_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_lisp"
@@ -1312,6 +1324,8 @@ help:
 	@echo "... vatroslav_geneus"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... vatroslav_gennodejs"
+	@echo "... vatroslav_generate_messages_lisp"
+	@echo "... TopicPublisher"
 .PHONY : help
 
 

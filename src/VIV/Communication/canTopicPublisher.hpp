@@ -21,6 +21,9 @@
 
 using namespace Vatroslav;
 
+
+	int dummy();
+
 	void canTopicCallback(const vatroslav::CanMsg& msg);
 
 	bool Send( const CommMsg& msg );

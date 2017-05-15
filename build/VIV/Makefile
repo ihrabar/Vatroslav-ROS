@@ -88,6 +88,18 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -120,18 +132,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -224,21 +224,6 @@ sensor_msgs_generate_messages_lisp: VIV/CMakeFiles/sensor_msgs_generate_messages
 sensor_msgs_generate_messages_lisp/fast:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make VIV/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/rule:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/rule
-.PHONY : VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-vatroslav_generate_messages_lisp: VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/rule
-
-.PHONY : vatroslav_generate_messages_lisp
-
-# fast build rule for target.
-vatroslav_generate_messages_lisp/fast:
-	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build
-.PHONY : vatroslav_generate_messages_lisp/fast
 
 # Convenience name for target.
 VIV/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
@@ -825,6 +810,36 @@ vatroslav_gennodejs/fast:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/vatroslav_gennodejs.dir/build.make VIV/CMakeFiles/vatroslav_gennodejs.dir/build
 .PHONY : vatroslav_gennodejs/fast
 
+# Convenience name for target.
+VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/rule:
+	cd /home/larics/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/rule
+.PHONY : VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+vatroslav_generate_messages_lisp: VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/rule
+
+.PHONY : vatroslav_generate_messages_lisp
+
+# fast build rule for target.
+vatroslav_generate_messages_lisp/fast:
+	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build.make VIV/CMakeFiles/vatroslav_generate_messages_lisp.dir/build
+.PHONY : vatroslav_generate_messages_lisp/fast
+
+# Convenience name for target.
+VIV/CMakeFiles/TopicPublisher.dir/rule:
+	cd /home/larics/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 VIV/CMakeFiles/TopicPublisher.dir/rule
+.PHONY : VIV/CMakeFiles/TopicPublisher.dir/rule
+
+# Convenience name for target.
+TopicPublisher: VIV/CMakeFiles/TopicPublisher.dir/rule
+
+.PHONY : TopicPublisher
+
+# fast build rule for target.
+TopicPublisher/fast:
+	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/TopicPublisher.dir/build.make VIV/CMakeFiles/TopicPublisher.dir/build
+.PHONY : TopicPublisher/fast
+
 Communication/CanAdv.o: Communication/CanAdv.cpp.o
 
 .PHONY : Communication/CanAdv.o
@@ -1099,6 +1114,7 @@ Communication/canTopicPublisher.o: Communication/canTopicPublisher.cpp.o
 # target to build an object file
 Communication/canTopicPublisher.cpp.o:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o
+	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/TopicPublisher.dir/build.make VIV/CMakeFiles/TopicPublisher.dir/Communication/canTopicPublisher.cpp.o
 .PHONY : Communication/canTopicPublisher.cpp.o
 
 Communication/canTopicPublisher.i: Communication/canTopicPublisher.cpp.i
@@ -1108,6 +1124,7 @@ Communication/canTopicPublisher.i: Communication/canTopicPublisher.cpp.i
 # target to preprocess a source file
 Communication/canTopicPublisher.cpp.i:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.i
+	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/TopicPublisher.dir/build.make VIV/CMakeFiles/TopicPublisher.dir/Communication/canTopicPublisher.cpp.i
 .PHONY : Communication/canTopicPublisher.cpp.i
 
 Communication/canTopicPublisher.s: Communication/canTopicPublisher.cpp.s
@@ -1117,6 +1134,7 @@ Communication/canTopicPublisher.s: Communication/canTopicPublisher.cpp.s
 # target to generate assembly for a file
 Communication/canTopicPublisher.cpp.s:
 	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.s
+	cd /home/larics/catkin_ws/build && $(MAKE) -f VIV/CMakeFiles/TopicPublisher.dir/build.make VIV/CMakeFiles/TopicPublisher.dir/Communication/canTopicPublisher.cpp.s
 .PHONY : Communication/canTopicPublisher.cpp.s
 
 Devices/Flipper.o: Devices/Flipper.cpp.o
@@ -1335,12 +1353,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... rebuild_cache"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... vatroslav_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_lisp"
@@ -1381,8 +1399,9 @@ help:
 	@echo "... vatroslav_geneus"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... vatroslav_gennodejs"
+	@echo "... vatroslav_generate_messages_lisp"
+	@echo "... TopicPublisher"
 	@echo "... install/local"
-	@echo "... install"
 	@echo "... Communication/CanAdv.o"
 	@echo "... Communication/CanAdv.i"
 	@echo "... Communication/CanAdv.s"

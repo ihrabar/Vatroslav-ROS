@@ -36,10 +36,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/larics/catkin_ws/src/VIV/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/home/larics/catkin_ws/src/VIV/Communication"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/larics/catkin_ws/build/VIV/CMakeFiles/TopicPublisher.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -246,6 +246,9 @@ RT_LIBRARY:FILEPATH=/usr/lib/i386-linux-gnu/librt.so
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
+//Dependencies for target
+TopicPublisher_LIB_DEPENDS:STATIC=
+
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
 

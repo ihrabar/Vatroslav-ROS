@@ -20,6 +20,7 @@
 //using namespace std;
 
 using namespace Vatroslav;
+
 ros::Publisher sendToCAN;
 ros::Subscriber subCAN;
 
@@ -30,6 +31,7 @@ int main( int argc, char* argv[] )
 	ros::init(argc, argv, "vatroslav");
 	ros::NodeHandle n;
 	//ros::Rate loop_rate(1);
+	dummy();
 	sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
 	//subCAN = n.subscribe("receiveCAN", 1000, canTopicCallback); // TREBA ODKOMENTIRAT ALI NE RADI !!!!!!!!!!!!!!!!!!!!!!
 	//CommPtr p_comm();

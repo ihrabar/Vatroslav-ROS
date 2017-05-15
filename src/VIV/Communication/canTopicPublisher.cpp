@@ -41,6 +41,10 @@ list<Vatroslav::CommMsg> msgList;	// vector for storing data from subscriber
 
 //-----------------------------------------------------------------------------
 //definiranje subscribera i liste koju on puni a ostatak programa na zahtjev prazni
+int dummy()
+{
+return 0;
+};
 
 
 void canTopicCallback(const vatroslav::CanMsg& por)

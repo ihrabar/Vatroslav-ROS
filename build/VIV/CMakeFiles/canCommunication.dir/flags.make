@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"vatroslav\"
 
-CXX_INCLUDES = -I/home/larics/catkin_ws/devel/include -I/home/larics/catkin_ws/src/VIV/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/larics/catkin_ws/devel/include -I/home/larics/catkin_ws/src/VIV/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/larics/catkin_ws/src/VIV/Communication 
 
