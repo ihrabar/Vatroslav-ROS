@@ -2,9 +2,9 @@
 
  */
 
-#ifdef VATROSLAV_UNO
+//#ifdef VATROSLAV_UNO
 
-#include "ros/ros.h"
+//#include "ros/ros.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -14,6 +14,8 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <stdio.h>
+#include <list>
+#include "boost/date_time/posix_time/posix_time.hpp"
 
 #include <cstring>	// for memecpy
 #include <algorithm>
@@ -21,16 +23,23 @@
 #include "canTopicPublisher.hpp"
 #include <errno.h>
 #include "CommMsg.hpp"
+
+#include "../Devices/flipper_test.hpp"
+
 //#undef min	// remove min macro 
 
 /////////////////////////////////// TU PROMJENITI DA NE RADIR DIREKT NA CAN ANEGO DA DALJE NA CAN NODE
 //ros::Publisher sendToCAN;
 
-namespace Vatroslav
-{
+using namespace Vatroslav;
+
+
+
 namespace pt = boost::posix_time;
 
-list<Vatroslav::CommMsg> msgList;	// vector for storing data from subscriber
+
+
+
 
 
 	//sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
@@ -41,10 +50,7 @@ list<Vatroslav::CommMsg> msgList;	// vector for storing data from subscriber
 
 //-----------------------------------------------------------------------------
 //definiranje subscribera i liste koju on puni a ostatak programa na zahtjev prazni
-int dummy()
-{
-return 0;
-};
+
 
 
 void canTopicCallback(const vatroslav::CanMsg& por)
@@ -61,7 +67,7 @@ void canTopicCallback(const vatroslav::CanMsg& por)
 		
 	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, boost::posix_time::from_iso_string(por.time));
 	
-	msgList.push_back(*result);
+	msgList.push_back(result);
 
   //ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
@@ -91,6 +97,7 @@ bool Send( const CommMsg& por1)
 bool Receive(CommMsg& msg, unsigned short timeout)
 {
 
+	bool success=false;
 	boost::posix_time::time_duration dur;
 	pt::ptime t1,t2;
 
@@ -105,7 +112,8 @@ bool Receive(CommMsg& msg, unsigned short timeout)
 				break;
 			}
 			if (!msgList.empty()){
-				msg = msgList.pop_front();
+				msg=msgList.front();
+				msgList.pop_front();
 				success=true;
 				break;
 			}
@@ -119,7 +127,5 @@ bool Receive(CommMsg& msg, unsigned short timeout)
 
 
 
-}
-
-#endif // VATROSLAV_UNO
+//#endif // VATROSLAV_UNO
 

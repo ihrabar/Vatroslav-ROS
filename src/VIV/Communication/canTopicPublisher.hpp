@@ -21,8 +21,8 @@
 
 using namespace Vatroslav;
 
+namespace Vatroslav {
 
-	int dummy();
 
 	void canTopicCallback(const vatroslav::CanMsg& msg);
 
@@ -38,7 +38,7 @@ using namespace Vatroslav;
 	/*!
 
 	 */
-
+}
 
 
 //#endif	// VATROSLAV_CAN_ADV_HPP

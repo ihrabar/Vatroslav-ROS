@@ -1,39 +1,135 @@
+
 /*!	\file	flipper_test.cpp
 	
 	Main file for the flipper-testing application.
  */
 
-#include "ros/ros.h"
-#include "std_msgs/String.h"
-#include <sstream>
-#include <stdlib.h>
-#include "../Communication/Communication.hpp"
-#include "MotorEPOS.hpp"
-#include "LinAct.hpp"
-//#include "Windows.h"
-#include "../Communication/SerialBoost.hpp"
-#include "WirelessVIV.hpp"
-#include <unistd.h>
-#include <vatroslav/CanMsg.h>
-#include "../Communication/canTopicPublisher.hpp"
+#include "flipper_test.hpp"
+
+
 
 //using namespace std;
 
 using namespace Vatroslav;
+namespace pt = boost::posix_time;
+
 
 ros::Publisher sendToCAN;
 ros::Subscriber subCAN;
+
+std::list<Vatroslav::CommMsg> msgList;	// vector for storing data from subscriber
+
+
+void canTopicCallback(const vatroslav::CanMsg& por)
+{
+	 char result_data[] = {0 ,0, 0, 0, 0, 0, 0, 0};
+	result_data[0] = (char) por.data[0];
+	result_data[1] = (char) por.data[1];
+	result_data[2] = (char) por.data[2];
+	result_data[3] = (char) por.data[3];
+	result_data[4] = (char) por.data[4];
+	result_data[5] = (char) por.data[5];
+	result_data[6] = (char) por.data[6];
+	result_data[7] = (char) por.data[7];
+		
+	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, boost::posix_time::from_iso_string(por.time));
+	
+	msgList.push_back(result);
+
+  //ROS_INFO("I heard: [%s]", msg->data.c_str());
+}
+
+/* virtual */
+bool Send( const CommMsg& por1)
+{
+
+	vatroslav::CanMsg por2;
+	const boost::posix_time::ptime temp(por1.Timestamp());
+
+	std::string temp2 = boost::posix_time::to_iso_string(temp);
+
+	por2.id = por1.Id();
+	por2.data = std::string ( por1.Data(), por1.Size() );
+	por2.size = por1.Size();
+	por2.time = temp2;
+
+  	sendToCAN.publish(por2);
+	return 0;
+
+}
+
+//-----------------------------------------------------------------------------
+
+/* virtual */
+bool Receive(CommMsg& msg, unsigned short timeout)
+{
+
+	bool success=false;
+	boost::posix_time::time_duration dur;
+	pt::ptime t1,t2;
+
+	t1=boost::posix_time::microsec_clock::local_time();
+
+		while (msgList.empty()){
+			t2=boost::posix_time::microsec_clock::local_time();
+			dur=t2-t1;
+
+			if (dur.total_milliseconds()>timeout){
+				success=false;
+				break;
+			}
+			if (!msgList.empty()){
+				msg=msgList.front();
+				msgList.pop_front();
+				success=true;
+				break;
+			}
+
+		}
+	return success;
+
+}
+
+void canCallback(const vatroslav::CanMsg& por)
+{
+	 char result_data[] = {0 ,0, 0, 0, 0, 0, 0, 0};
+	result_data[0] = (char) por.data[0];
+	result_data[1] = (char) por.data[1];
+	result_data[2] = (char) por.data[2];
+	result_data[3] = (char) por.data[3];
+	result_data[4] = (char) por.data[4];
+	result_data[5] = (char) por.data[5];
+	result_data[6] = (char) por.data[6];
+	result_data[7] = (char) por.data[7];
+		
+	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, boost::posix_time::from_iso_string(por.time));
+	
+	msgList.push_back(result);
+	
+
+  //ROS_INFO("I heard: [%s]", msg->data.c_str());
+}
+
+//-----------------------------------------------------------------------------
+
 
 
 int main( int argc, char* argv[] )
 {
 
+
+
 	ros::init(argc, argv, "vatroslav");
-	ros::NodeHandle n;
-	//ros::Rate loop_rate(1);
-	dummy();
+	ros::NodeHandle n;	
+
+  	ros::Subscriber sub = n.subscribe("receiveCAN", 1000, canCallback);
+
+	//subCAN = n.subscribe("receiveCAN", 100, canTopicCallback); // TREBA ODKOMENTIRAT ALI NE RADI !!!!!!!!!!!!!!!!!!!!!!
 	sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
-	//subCAN = n.subscribe("receiveCAN", 1000, canTopicCallback); // TREBA ODKOMENTIRAT ALI NE RADI !!!!!!!!!!!!!!!!!!!!!!
+
+
+	//ros::Rate loop_rate(1);
+
 	//CommPtr p_comm();
 
 	CommPar par( CommPar::UNO,125000,"can1" );

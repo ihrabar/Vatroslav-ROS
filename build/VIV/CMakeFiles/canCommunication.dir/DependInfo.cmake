@@ -35,7 +35,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/larics/catkin_ws/src/VIV/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/larics/catkin_ws/src/VIV/Communication"
   )
 
 # Targets to which this target links.

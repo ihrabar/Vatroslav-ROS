@@ -369,33 +369,9 @@ VIV/CMakeFiles/mainControl.dir/Communication/TimeoutSerial.cpp.o.provides: VIV/C
 VIV/CMakeFiles/mainControl.dir/Communication/TimeoutSerial.cpp.o.provides.build: VIV/CMakeFiles/mainControl.dir/Communication/TimeoutSerial.cpp.o
 
 
-VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o: VIV/CMakeFiles/mainControl.dir/flags.make
-VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o: /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o"
-	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o -c /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.cpp
-
-VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.i"
-	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.cpp > CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.i
-
-VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.s"
-	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.cpp -o CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.s
-
-VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o.requires:
-
-.PHONY : VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o.requires
-
-VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o.provides: VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o.requires
-	$(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o.provides.build
-.PHONY : VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o.provides
-
-VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o.provides.build: VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o
-
-
 VIV/CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o: VIV/CMakeFiles/mainControl.dir/flags.make
 VIV/CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o: /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object VIV/CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object VIV/CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o -c /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp
 
 VIV/CMakeFiles/mainControl.dir/Devices/LinAct.cpp.i: cmake_force
@@ -419,7 +395,7 @@ VIV/CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o.provides.build: VIV/CMakeFil
 
 VIV/CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o: VIV/CMakeFiles/mainControl.dir/flags.make
 VIV/CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o: /home/larics/catkin_ws/src/VIV/Devices/flipper_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object VIV/CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object VIV/CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o"
 	cd /home/larics/catkin_ws/build/VIV && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o -c /home/larics/catkin_ws/src/VIV/Devices/flipper_test.cpp
 
 VIV/CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.i: cmake_force
@@ -456,7 +432,6 @@ mainControl_OBJECTS = \
 "CMakeFiles/mainControl.dir/Communication/Communication.cpp.o" \
 "CMakeFiles/mainControl.dir/Communication/SerialBoost.cpp.o" \
 "CMakeFiles/mainControl.dir/Communication/TimeoutSerial.cpp.o" \
-"CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o" \
 "CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o" \
 "CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o"
 
@@ -476,7 +451,6 @@ mainControl_EXTERNAL_OBJECTS =
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/Communication/Communication.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/Communication/SerialBoost.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/Communication/TimeoutSerial.cpp.o
-/home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/build.make
@@ -504,9 +478,8 @@ mainControl_EXTERNAL_OBJECTS =
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: /usr/lib/i386-linux-gnu/libboost_atomic.so
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: /usr/lib/i386-linux-gnu/libpthread.so
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: /usr/lib/i386-linux-gnu/libconsole_bridge.so
-/home/larics/catkin_ws/devel/lib/vatroslav/mainControl: /home/larics/catkin_ws/devel/lib/libTopicPublisher.so
 /home/larics/catkin_ws/devel/lib/vatroslav/mainControl: VIV/CMakeFiles/mainControl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable /home/larics/catkin_ws/devel/lib/vatroslav/mainControl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/larics/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable /home/larics/catkin_ws/devel/lib/vatroslav/mainControl"
 	cd /home/larics/catkin_ws/build/VIV && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mainControl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -527,7 +500,6 @@ VIV/CMakeFiles/mainControl.dir/requires: VIV/CMakeFiles/mainControl.dir/Communic
 VIV/CMakeFiles/mainControl.dir/requires: VIV/CMakeFiles/mainControl.dir/Communication/Communication.cpp.o.requires
 VIV/CMakeFiles/mainControl.dir/requires: VIV/CMakeFiles/mainControl.dir/Communication/SerialBoost.cpp.o.requires
 VIV/CMakeFiles/mainControl.dir/requires: VIV/CMakeFiles/mainControl.dir/Communication/TimeoutSerial.cpp.o.requires
-VIV/CMakeFiles/mainControl.dir/requires: VIV/CMakeFiles/mainControl.dir/Communication/canTopicPublisher.cpp.o.requires
 VIV/CMakeFiles/mainControl.dir/requires: VIV/CMakeFiles/mainControl.dir/Devices/LinAct.cpp.o.requires
 VIV/CMakeFiles/mainControl.dir/requires: VIV/CMakeFiles/mainControl.dir/Devices/flipper_test.cpp.o.requires
 
