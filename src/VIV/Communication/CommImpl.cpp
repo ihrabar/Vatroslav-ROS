@@ -41,10 +41,11 @@ CommImpl& CommImpl::Create( const CommPar& par )
 					break;
 #endif
 #ifdef VATROSLAV_UNO
+				std::cout << "CommPar UNO workspace" << std::endl;
 				case CommPar::UNO:
 					return CanAdvSingleton::Instance();
 					break;
-#endif
+#endif				
 				default:
 					// ovaj dummy se implementira
 					return DummyImplSingleton::Instance();

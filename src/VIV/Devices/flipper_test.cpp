@@ -20,7 +20,7 @@ ros::Subscriber subCAN;
 std::list<Vatroslav::CommMsg> msgList;	// vector for storing data from subscriber
 
 /* virtual */
-bool Send( const CommMsg& por1)
+bool SendV( const CommMsg& por1)
 {
 
 	vatroslav::CanMsg por2;
@@ -33,9 +33,11 @@ bool Send( const CommMsg& por1)
 	por2.size = por1.Size();
 	por2.time = temp2;
 
+	std::cout << "Gotova priprema za slanje flipperTesta na sendToCAN" << std::endl;
   	sendToCAN.publish(por2);
 	
-    ROS_DEBUG("Hello %s", "Poslano flipperTest");
+	std::cout << "Poslano flipperTesta na sendToCAN" << std::endl;
+    ROS_DEBUG("Poslano flipperTesta na sendToCAN");
 	return 0;
 
 }
@@ -51,6 +53,7 @@ bool Receive(CommMsg& msg, unsigned short timeout)
 	pt::ptime t1,t2;
 
 	t1=boost::posix_time::microsec_clock::local_time();
+	std::cout << "Zahtjev za primanjem flipperTest" << std::endl;
 	ROS_DEBUG("Zahtjev za primanjem flipperTest");
 		while (msgList.empty()){
 			t2=boost::posix_time::microsec_clock::local_time();
@@ -63,6 +66,7 @@ bool Receive(CommMsg& msg, unsigned short timeout)
 			if (!msgList.empty()){
 				msg=msgList.front();
 				msgList.pop_front();
+				std::cout << "primljenjo flipperTest" << std::endl;
 				ROS_DEBUG("primljenjo flipperTest");
 				success=true;
 				break;
@@ -123,9 +127,9 @@ int main( int argc, char* argv[] )
 	
 		CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
 
-		p_comm->Send( msg );
+		std::cout << "debugg petlja" << std::endl;
+		SendV( msg );
 		sleep(1);
-
 	}
 
 
