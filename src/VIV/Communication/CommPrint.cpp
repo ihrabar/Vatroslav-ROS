@@ -11,24 +11,24 @@ namespace Vatroslav
 
 std::ostream& operator<<( std::ostream& os, const CommPar& par )
 {
-	os << "Interface type: ";
+	//os << "Interface type: ";
 	switch ( par.Interface() )
 	{
 		case CommPar::CAN:
-			os << "CAN ";
+			//os << "CAN ";
 			break;
 		case CommPar::RS232:
 			os << "RS232 ";
 			break;
 	}
 		
-	os << "\nBaudrate: " << par.Baudrate() << "\nPort: " << par.Port();
+	//os << "\nBaudrate: " << par.Baudrate() << "\nPort: " << par.Port();
 	
-	os << "\nCan driver: ";
+	//os << "\nCan driver: ";
 	switch ( par.CanDriver() )
 	{
 		case CommPar::NONE:
-			os << "NONE";
+		//	os << "NONE";
 			break;
 		case CommPar::IXXAT:
 			os << "IXXAT";
@@ -41,8 +41,8 @@ std::ostream& operator<<( std::ostream& os, const CommPar& par )
 			break;
 	}
 
-	os	<< "\nStart bits: " << par.StartBits() << "\nData bits: " << par.DataBits()
-		<< "\nParity: " << par.Parity() << "\nStop bits: " << par.StopBits();
+	//os	<< "\nStart bits: " << par.StartBits() << "\nData bits: " << par.DataBits()
+	//	<< "\nParity: " << par.Parity() << "\nStop bits: " << par.StopBits();
 
 	return os;
 }
@@ -51,8 +51,8 @@ std::ostream& operator<<( std::ostream& os, const CommPar& par )
 
 std::ostream& operator<<( std::ostream& os, const CommMsg& msg )
 {
-	os << "Id: " << std::hex << std::setfill('0') << msg.Id() << " " 
-	   << " Data: ";
+	//os << "Id: " << std::hex << std::setfill('0') << msg.Id() << " "    //hra
+	//   << " Data: ";														//hra
 	
 	//! \todo More efficient implementation here ?
 	for ( size_t i = 0; i < msg.Size(); i++ )
@@ -63,8 +63,8 @@ std::ostream& operator<<( std::ostream& os, const CommMsg& msg )
 		std::string tmp( buffer.str(), 2, 2 );
 		os << tmp;
 	}
-	os << " Size: " << msg.Size() << "bytes"
-		<< " Timestamp: " << msg.Timestamp();
+	//os << " Size: " << msg.Size() << "bytes"								//hra
+	//	<< " Timestamp: " << msg.Timestamp();								//hra
 
 	return os;
 }

@@ -34,6 +34,8 @@ bool Send( const CommMsg& por1)
 	por2.time = temp2;
 
   	sendToCAN.publish(por2);
+	
+    ROS_DEBUG("Hello %s", "Poslano flipperTest");
 	return 0;
 
 }
@@ -49,7 +51,7 @@ bool Receive(CommMsg& msg, unsigned short timeout)
 	pt::ptime t1,t2;
 
 	t1=boost::posix_time::microsec_clock::local_time();
-
+	ROS_DEBUG("Zahtjev za primanjem flipperTest");
 		while (msgList.empty()){
 			t2=boost::posix_time::microsec_clock::local_time();
 			dur=t2-t1;
@@ -61,6 +63,7 @@ bool Receive(CommMsg& msg, unsigned short timeout)
 			if (!msgList.empty()){
 				msg=msgList.front();
 				msgList.pop_front();
+				ROS_DEBUG("primljenjo flipperTest");
 				success=true;
 				break;
 			}
@@ -85,6 +88,7 @@ void canCallback(const vatroslav::CanMsg& por)
 	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, boost::posix_time::from_iso_string(por.time));
 	
 	msgList.push_back(result);
+	ROS_DEBUG("Skunto s topica flipperTest");
 	
 }
 
@@ -105,35 +109,28 @@ int main( int argc, char* argv[] )
 	//subCAN = n.subscribe("receiveCAN", 100, canTopicCallback); // TREBA ODKOMENTIRAT ALI NE RADI !!!!!!!!!!!!!!!!!!!!!!
 	sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
 
+	ROS_INFO("krenuo flipperTest");
 
-	//ros::Rate loop_rate(1);
-
-	//CommPtr p_comm();
 
 	CommPar par( CommPar::UNO,125000,"can1" );
 
-//	std::cout << par << std::endl;	
-//	if( CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) ) ) printf("Hra_test_1\n");
 	CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
-//	p_comm->Open();
-	
-	//int debug;
-	//p_comm->Open();
-	//if(	p_comm->Open()	) printf("Hra_test_1\n");
+
+
+
 	RegParEPOS par2; 
 	MotionParEPOS par3(PROFILE_VELOCITY_MODE);
-	//std::cout << "Hra_test_2" << std::endl;
 	MotorParEPOS par41( 1, par2, par3 );
 	MotorParEPOS par42( 2, par2, par3 );
 	MotorParEPOS par43( 3, par2, par3 );
 	MotorParEPOS par44( 4, par2, par3 );
-	//std::cout << "Hra_test_3" << std::endl;
+
 	
 	boost::shared_ptr<MotorEPOS> motor1(new MotorEPOS( par41, p_comm ));
 	boost::shared_ptr<MotorEPOS> motor2(new MotorEPOS( par42, p_comm ));
 	boost::shared_ptr<MotorEPOS> motor3(new MotorEPOS( par43, p_comm ));
-	boost::shared_ptr<MotorEPOS> motor4(new MotorEPOS( par44, p_comm ));	
-	//std::cout << "Hra_test_4" << std::endl;
+	boost::shared_ptr<MotorEPOS> motor4(new MotorEPOS( par44, p_comm ));
+
 	
 	boost::shared_ptr<LinAct> lin1(new LinAct(101,p_comm));//stvoriti svoje nodove ya lin act??????????????
 	boost::shared_ptr<LinAct> lin2(new LinAct(102,p_comm));
@@ -141,7 +138,7 @@ int main( int argc, char* argv[] )
 	boost::shared_ptr<LinAct> lin4(new LinAct(104,p_comm));
 
 	
-	//std::cout << "Hra_test_5" << std::endl;
+
 	FlipperPar flip(0.05,0.15);
 
 	boost::shared_ptr<AngleSensor> ang1(new AngleSensor(motor1,2000,1));
@@ -151,7 +148,6 @@ int main( int argc, char* argv[] )
 	boost::shared_ptr<AngleSensor> ang4(new AngleSensor(motor4,3422,1));
 
 
-	//std::cout << "Hra_test_6" << std::endl;
 	boost::shared_ptr<Flipper> flipper1(new Flipper(motor3,lin2,flip,ang3));
 	boost::shared_ptr<Flipper> flipper2(new Flipper(motor4,lin1,flip,ang4));
 	boost::shared_ptr<Flipper> flipper3(new Flipper(motor1,lin3,flip,ang1));
@@ -159,7 +155,6 @@ int main( int argc, char* argv[] )
 	
 	boost::shared_ptr<Kinematics> kin(new Kinematics(flipper2,flipper1,flipper3,flipper4));
 	
-	//std::cout << "Hra_test_7" << std::endl;
 	boost::shared_ptr<GasSensor> gas1(new GasSensor(0,p_comm));
 	boost::shared_ptr<GasSensor> gas2(new GasSensor(1,p_comm));
 	boost::shared_ptr<GasSensor> gas3(new GasSensor(2,p_comm));
@@ -168,7 +163,6 @@ int main( int argc, char* argv[] )
 	gas2->Connect();
 	gas3->Connect();
 
-	//std::cout << "Hra_test_8" << std::endl;
 	boost::shared_ptr<PowerSensor> pow1(new PowerSensor(0,p_comm));
 	boost::shared_ptr<PowerSensor> pow2(new PowerSensor(1,p_comm));
 	boost::shared_ptr<PowerSensor> pow3(new PowerSensor(2,p_comm));
@@ -179,7 +173,6 @@ int main( int argc, char* argv[] )
 	boost::shared_ptr<RotateCamera> rot(new RotateCamera(p_comm));
 
 
-	//std::cout << "Hra_test_9" << std::endl;
 	if (pow1->Connect()) printf("Sensor 1 connected\n");
 	if (pow2->Connect()) printf("Sensor 2 connected\n");
 	if (pow3->Connect()) printf("Sensor 3 connected\n");
@@ -187,37 +180,31 @@ int main( int argc, char* argv[] )
 	if (pow5->Connect()) printf("Sensor 5 connected\n");
 	if (pow6->Connect()) printf("Sensor 6 connected\n");
 
-	//std::cout << "Hra_test_10" << std::endl;
 	pow1->UpdateRead();
 	pow2->UpdateRead();
 	pow3->UpdateRead();
 	pow4->UpdateRead();
 	pow5->UpdateRead();
 	
-	
-	//std::cout << "Hra_test_11" << std::endl;
+
 	printf("Pow1=%d\n",pow1->GetValue(0));
 	printf("Pow2=%d\n",pow2->GetValue(0));
 	printf("Pow3=%d\n",pow3->GetValue(0));
 	printf("Pow4=%d\n",pow4->GetValue(0));
 	printf("Pow5=%d\n",pow5->GetValue(0));
 
-	//std::cout << "Hra_test_12" << std::endl;
 
 	boost::shared_ptr<TemperatureSensor> temp1(new TemperatureSensor(300,p_comm));
 	boost::shared_ptr<TemperatureSensor> temp2(new TemperatureSensor(402,p_comm));
 
-	//std::cout << "Hra_test_13" << std::endl;
 
 	boost::shared_ptr<PositionSensor> pos1(new PositionSensor(lin1));
 	boost::shared_ptr<PositionSensor> pos2(new PositionSensor(lin2));
-	
-	//std::cout << "Hra_test_14" << std::endl;
+
 
 	boost::shared_ptr<PositionSensor> pos3(new PositionSensor(lin3));
 	boost::shared_ptr<PositionSensor> pos4(new PositionSensor(lin4));
 
-	//std::cout << "Hra_test_15" << std::endl;
 
 	boost::shared_ptr<Sensors> sen(new Sensors);
 	temp1->Connect();
@@ -240,8 +227,7 @@ int main( int argc, char* argv[] )
 	sen->Add(ang2);
 	sen->Add(ang3);
 	sen->Add(ang4);
-	
-	//std::cout << "Hra_test_16" << std::endl;
+
 
 	if (lin1->Connect()) printf("Linear Actuator 1 connected\n");
 	//	lin1->ChangeConstant(LinAct::end_position, 780);
@@ -286,7 +272,6 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 	pow->SetStateDrive(true);
 	pow->UpdateWrite();
 
-	//std::cout << "Hra_test_17" << std::endl;
 
 //	motor1->SetImmediateRef(true);
 	if (motor1->Connect()) printf("Motor1 connected\n");
@@ -325,7 +310,6 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 	wir.Open("/dev/ttyS0");
 	int i=0,j,t=0;
 
-	//std::cout << "Hra_test_18" << std::endl;
 
 /*	lin2->UpdateRead();
 	lin2->Off();
@@ -338,16 +322,15 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 	boost::posix_time::ptime now;
 		boost::posix_time::time_duration dur;
 	char data[] = { 3,2,3,4,5,6,7,8};
-	//std::cout << "Hra_test_19" << std::endl;
 	
 	CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
-	//std::cout << "Hra_test_19.1" << std::endl;	
+
 	
-	while (p_comm->Receive(msg,30));//{std::cout << "Hra_test_19.1_zapeo_while" << std::endl;};//ovo je praznjenje buffera
-	//std::cout << "Hra_test_19.2" << std::endl;	
+	while (p_comm->Receive(msg,30));//ovo je praznjenje buffera
+	
 	wir.EmptyBuffer();
 	int brojac=0;
-	//std::cout << "Hra_test_19.3" << std::endl;	
+	
 	while (1){
 		time=boost::posix_time::microsec_clock::local_time() ;
 		//std::cout<<time<<std::endl;
@@ -374,7 +357,6 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 //		if (lin3->UpdateRead() && lin4->UpdateRead()) printf("Uspjesno\n"); else printf("error\n");
 		sen->UpdateRead();
 
-	//std::cout << "Hra_test_20" << std::endl;
 
 		sen->UpdateWrite();
 		pow->UpdateWrite();
@@ -387,7 +369,7 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 		wir.SendMessage();
 		brojac++;
 		if (brojac>10){
-			printf("\n\nIzbaceno paketa %d\n",wir.EmptyBuffer());
+			//printf("\n\nIzbaceno paketa %d\n",wir.EmptyBuffer());
 			brojac=0;			
 		}
 		now=boost::posix_time::microsec_clock::local_time() ;
@@ -397,7 +379,7 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 			dur=now-time;
 		}
 
-		printf("                                                 kut je mot3:%d mot4:%d mot1:%d mot2:%d\n",ang3->GetValue(1),ang4->GetValue(1),ang1->GetValue(1),ang2->GetValue(1));
+		//printf("                                                 kut je mot3:%d mot4:%d mot1:%d mot2:%d\n",ang3->GetValue(1),ang4->GetValue(1),ang1->GetValue(1),ang2->GetValue(1));
 		//motor3->VelocityRef(100);
 //		motor3->UpdateWrite();
 //		motor2->VelocityRef(500);
@@ -414,6 +396,5 @@ lin4->ChangeConstant(LinAct::max_current,1600);
 
 	ros::spinOnce();
 
-	//std::cout << "Hra_test_21_kraj" << std::endl;
 	return 0;
 }

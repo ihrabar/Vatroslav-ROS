@@ -275,6 +275,8 @@ string.h
 -
 vatroslav/CanMsg.h
 -
+ros/console.h
+-
 
 /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 cassert

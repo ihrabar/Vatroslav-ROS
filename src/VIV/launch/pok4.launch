@@ -6,7 +6,7 @@
   </node>
 
 	<node name="canCommunication" pkg="vatroslav" type="canCommunication"/>  
-	<node name="mainControl" pkg="vatroslav" type="mainControl"/>  
+	<node name="mainControl" pkg="vatroslav" type="mainControl" />  
 
 
 </launch>

@@ -26,6 +26,7 @@
 #include <string.h>
 
 #include <vatroslav/CanMsg.h>
+#include <ros/console.h>
 //#undef min	// remove min macro 
 
 //using namespace boost;
@@ -59,6 +60,7 @@ void canCallback(const vatroslav::CanMsg& por)
 	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, boost::posix_time::from_iso_string(por.time));
 
 	(*p_comm2)->Send(result);
+	ROS_INFO("poslano na CAN");
 
   //ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
@@ -82,6 +84,7 @@ int publishCAN(const Vatroslav::CommMsg& por1){
 	//memcpy(&por2.time,por1.Data(), 32);//32bita jer je u CanMsg definirano int32 kao prostor za zapis vremena
 
   	can_received.publish(por2);
+	ROS_INFO("Skunto s CANa");
 	return 0;
 }
 
