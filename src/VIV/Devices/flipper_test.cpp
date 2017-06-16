@@ -110,11 +110,23 @@ int main( int argc, char* argv[] )
 	sendToCAN = n.advertise<vatroslav::CanMsg>("sendCAN", 1000);
 
 	ROS_INFO("krenuo flipperTest");
+	std::cout << "krenuo flipperTest" << std::endl;
+
+	CommPar par( Vatroslav::CommPar::UNO,125000,"can0" );
+
+	CommPtr p_comm( Vatroslav::Communication::Create( Communication::BLOCKING, par ) );
 
 
-	CommPar par( CommPar::UNO,125000,"can0" );
+	
+	while (1){
+		char data[] = { 3,2,3,4,5,6,7,8};
+	
+		CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
 
-	CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
+		p_comm->Send( msg );
+		sleep(1);
+
+	}
 
 
 

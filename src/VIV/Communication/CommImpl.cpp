@@ -46,6 +46,7 @@ CommImpl& CommImpl::Create( const CommPar& par )
 					break;
 #endif
 				default:
+					// ovaj dummy se implementira
 					return DummyImplSingleton::Instance();
 			}
 			break;
@@ -62,6 +63,7 @@ CommImpl& CommImpl::Create( const CommPar& par )
 					//return SerialBoostSingleton::Instance();
 					//break;
 				default:
+
 					return DummyImplSingleton::Instance();
 			}
 			break;
