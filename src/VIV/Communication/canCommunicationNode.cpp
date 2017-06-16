@@ -134,7 +134,7 @@ int main( int argc, char* argv[] )
 
 	can_received = n.advertise<vatroslav::CanMsg>("receiveCAN", 1000);
 	
-	Vatroslav::CommPar par( Vatroslav::CommPar::UNO,125000,"can1" );
+	Vatroslav::CommPar par( Vatroslav::CommPar::UNO,125000,"can0" );
 	Vatroslav::CommPtr p_comm( Vatroslav::Communication::Create( Vatroslav::Communication::BLOCKING, par ) );
 		
 	p_comm->Open();

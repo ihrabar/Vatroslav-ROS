@@ -112,7 +112,7 @@ int main( int argc, char* argv[] )
 	ROS_INFO("krenuo flipperTest");
 
 
-	CommPar par( CommPar::UNO,125000,"can1" );
+	CommPar par( CommPar::UNO,125000,"can0" );
 
 	CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
 
