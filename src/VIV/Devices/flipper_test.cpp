@@ -121,6 +121,8 @@ int main( int argc, char* argv[] )
 	CommPtr p_comm( Vatroslav::Communication::Create( Communication::BLOCKING, par ) );
 
 
+	//samo demo ya git
+
 	
 	while (1){
 		char data[] = { 3,2,3,4,5,6,7,8};
