@@ -1,0 +1,150 @@
+/*!	\file	Flipper.cpp
+	\brief	Flipper member definitions.
+
+ */
+
+#include <cmath>
+
+#include "Flipper.hpp"
+
+namespace Vatroslav
+{
+
+//=============================================================================
+
+/* virtual */
+bool Flipper::Connect( void )
+{
+	bool result = ( p_motor_->Connect( ) && p_solenoid_->Connect( ) );
+	// Do an update to sync the software with the actual device.
+	this->Update( );
+
+	return result;
+}
+
+//-----------------------------------------------------------------------------
+
+/* virtual */
+bool Flipper::Disconnect( void )
+{
+	v_ref_ = 0;
+	w_ref_ = 0;
+	/*!
+		Do an update to stop the flipper before disconnecting.
+		\todo Depending on how the flipper is actually going to work,
+		this might become less trivial.
+     */
+	this->Update( );
+	bool result = ( p_motor_->Disconnect( ) && p_solenoid_->Disconnect( ) );
+	
+	return result;
+}
+
+//-----------------------------------------------------------------------------
+
+/* virtual */
+bool Flipper::Update( void )
+{
+	//! \todo Implement motor setpoint control here !
+	
+	/* 
+		First, update the flipper state, according to current motor and
+		solenoid state.
+	 */
+	bool result = ( p_motor_->Update( ) &&	p_solenoid_->Update( ) );
+
+	if ( result == true )
+	{
+		if ( p_solenoid_->Status( ) == 0 )
+		{
+			w_ = 0;
+			// v_ = p_motor_->Speed( ) * pars_.SmallR( );
+			state_ = DRIVE;
+			if ( fabs( v_ ) < 0.001 )
+			{
+				state_ = STOP;
+			}
+		}
+		else if ( ( p_solenoid_->Status( ) == 1 ) || ( p_solenoid_->Status( ) == 2 ) )
+		{
+			//w_ = p_motor_->Speed( ) * pars_.SmallR( ) / pars_.LargeR( );
+			v_ = 0;
+			state_ = FLIP;
+		}
+		else if ( p_solenoid_->Status( ) == 3 )
+		{
+			w_ = 0;
+			//v_ = p_motor_->Speed(  ) * pars_.SmallR( );
+			state_ = SOL_FAIL;
+		}
+		
+
+		/*
+			Based on given setpoints and current states, compute new commands
+			for the motor and solenoid
+		 */
+		if ( fabs( v_ref_ ) > 0.001 )
+		{
+			/* Command is drive */
+			
+			if ( state_ == FLIP )
+			{
+				if ( fabs( w_ ) < 0.001 )
+				{
+					p_solenoid_->Off( );
+				}
+				else
+				{
+					/* We need to stop first */
+					//p_motor_->Speed( 0 );
+				}
+			}
+			else
+			{
+				// motor.Speed( v_ref_ );
+			}
+		}
+		else if ( fabs( w_ref_ ) > 0.001 )
+		{
+			/* Command is flip */
+
+			if ( state_ == STOP )
+			{
+				/* Turn solenoid on */
+				p_solenoid_->On( );
+			}
+			else if ( state_ == DRIVE )
+			{
+				/* We need to stop first */
+				// p_motor_->Speed( 0 );
+			}
+			else if ( state_ == FLIP )
+			{
+				// p_motor_->Speed( w_ref_ * pars_.LargeR( ) / pars_.SmallR( );
+			}
+			else if ( state_ == SOL_FAIL )
+			{
+				/* Turn solenoid off to try resetting it */
+				p_solenoid_->Off( );
+			}
+		}
+		else
+		{
+			/* Command is stop */
+			//if ( fabs( p_motor_->Speed( ) ) < 0.001 )
+			if ( false )
+			{
+				p_solenoid_->Off( );
+			}
+			else
+			{
+				// p_motor_->Speed( 0 );
+			}
+		}
+	}
+	return result;
+}
+
+//=============================================================================
+
+}

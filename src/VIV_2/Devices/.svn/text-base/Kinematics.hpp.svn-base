@@ -1,0 +1,239 @@
+/*!	\file	Kinematics.hpp
+	\brief	Vatroslav Kinematics class declaration.
+
+ */
+
+#ifndef VATROSLAV_CONTROLLER_HPP
+#define VATROSLAV_CONTROLLER_HPP
+
+#include <map>
+
+#include <boost/shared_ptr.hpp>
+
+#include "Flipper.hpp"
+
+namespace Vatroslav
+{
+
+//! Robot kinematics.
+/*! Controls individual actuators according motion commands.
+
+ */
+class Kinematics : public Device
+{
+ public:
+
+	//! Flipper identifiers.
+	enum FlipperId { FRONT_LEFT, FRONT_RIGHT, REAR_LEFT, REAR_RIGHT };
+
+	//! Controller states.
+	enum StateType { STOP, DRIVE, FLIP, FAIL };
+
+	//! Constructor.
+	/*!
+		@param params	Map of flipper parameters.
+		@param ax_len	Vehicle axis length, in [m].
+	 */
+	Kinematics( FlipperPtr p_front_left, FlipperPtr p_front_right,
+				FlipperPtr p_rear_left, FlipperPtr p_rear_right, 
+				double ax_len, double speed_tol = 0.001 );
+
+	//! Connect to all devices.
+	/*!
+
+	 */
+	bool Connect( );
+
+	//! Disconnect form all devices.
+	/*!
+
+	 */
+	bool Disconnect( );
+	
+	//! Compute controller outputs and send them to actuators.
+	/*!
+
+	 */
+	bool Update( );
+
+	//! Set speed setpoints.
+	/*! Set rotational and translational speed setpoints.
+
+		The function also automatically resets front and rear
+		rotational velocity references to 0.
+
+		@param v_ref	Translational speed setpoint, in m/s.
+		@param w_ref	Rotational speed setpoint, in rad/s.
+	 */
+	void SpeedRef( double v, double w )
+	{
+		front_w_ref_ = 0;
+		rear_w_ref_ = 0;
+		v_ref_ = v;
+		w_ref_ = w;
+	}
+
+	//! Get current speed values.
+	/*! Get rotational and translational speeds.
+
+		@param p_v	Pointer to translational speed, in m/s.
+		@param p_w	Pointer to rotational speed, in rad/s.
+	 */
+	void Speed( double* p_v, double* p_w )
+	{
+		*p_v = v_;
+		*p_w = w_;
+	}
+
+	//! Set rotational velocity references for front and rear flipper pairs.
+	/*!
+		The function also resets vehicle rotational and translational speed
+		references to 0.
+
+		@param w_front	Rotational velocity reference for front flipper pair, 
+						in [rad/s].
+		@param w_rear	Rotational velocity reference for rear flipper pair, 
+						in [rad/s].
+	 */
+	void FlipVelRef( double w_front, double w_rear )
+	{
+		v_ref_ = 0;
+		w_ref_ = 0;
+		
+		front_w_ref_ = w_front;
+		rear_w_ref_ = w_rear;
+	}
+
+	//! Get rotational velocity references of front and rear flipper pairs.
+	/*!
+
+		@param p_w_front	Output parameter. Velocity reference of
+							front flipper pair, in [rad/s].
+		@param p_w_rear		Output parameter. Velocity reference of
+							rear flipper pair, in [rad/s].
+
+	 */
+	void FlipVelRef( double* p_w_front, double* p_w_rear  )
+	{
+		*p_w_front = front_w_ref_;
+		*p_w_rear = rear_w_ref_;
+	}
+
+	//! Get rotational velocities of front and rear flipper pairs.
+	/*!
+		@param p_w_front	Output parameter. Velocity of front flipper pair, in [rad/s].
+		@param p_w_rear		Output parameter. Velocity of rear flipper pair, in [rad/s].
+	 */
+	void FlipVel( double* p_w_front, double* p_w_rear )
+	{
+		*p_w_front = front_w_;
+		*p_w_rear = rear_w_;
+	}
+
+	StateType State( void )
+	{
+		return state_;
+	}
+	
+#if 0	
+	//! Set angle reference for front flippers.
+	/*!
+
+	 */
+	void FrontAngleRef( double angle )
+	{
+		front_angle_ref_ = angle;
+	}
+	
+	//! Get angle reference for front flippers.
+	/*!
+
+	 */
+	double FrontAngleRef( double angle )
+	{
+		return front_angle_ref_;
+	}
+
+	//! Get actual angle value for front flippers.
+	/*!
+
+	 */
+	double FrontAngle( void )
+	{
+		return front_angle_;
+	}
+
+	//! Set angle reference for front flippers.
+	/*!
+
+	 */
+	void FrontAngleRef( double angle )
+	{
+		front_angle_ref_ = angle;
+	}
+	
+	//! Get angle reference for front flippers.
+	/*!
+
+	 */
+	double FrontAngleRef( double angle )
+	{
+		return front_angle_ref_;
+	}
+
+	//! Get actual angle value for front flippers.
+	/*!
+
+	 */
+	double FrontAngle( void )
+	{
+		return front_angle_;
+	}
+#endif
+
+ private:
+	
+	//! Axis length, in [m]
+	double ax_len_;
+	//! Speed tolerance. Speeds smaller than this value are considered to be 0.
+	double speed_tol_;
+
+	//! Translational speed setpoint, in m/s.
+	double v_ref_;
+	//! Translational speed, in m/s.
+	double v_;
+	//! Rotational speed setpoint, in rad/s.
+	double w_ref_;
+	//! Rotational speed, in m/s.
+	double w_;
+	//! Front flipper pair rotational speed reference.
+	double front_w_ref_;
+	//! Front flipper pair rotational speed.
+	double front_w_;
+	//! Rear flipper pari rotational speed reference.
+	double rear_w_ref_;
+	//! Rear flipper pair rotational speed.
+	double rear_w_;
+#if 0
+	//! Front flipper angle reference.
+	double front_angle_ref_;
+	//! Front flipper angle.
+	double front_angle_;
+	//! Rear flipper angle reference.
+	double rear_angle_ref_;
+	//! Rear flipper angle.
+	double rear_angle_;
+#endif
+
+	//! Robot flippers
+	FlipperPtr p_front_left_, p_front_right_, p_rear_left_, p_rear_right_;
+	//! Controller state
+	StateType state_;
+
+};
+
+typedef boost::shared_ptr<Kinematics> KinematicsPtr;
+
+}
+
+#endif

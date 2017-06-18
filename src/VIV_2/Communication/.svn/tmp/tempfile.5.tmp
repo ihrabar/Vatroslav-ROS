@@ -1,0 +1,151 @@
+/*! \file	comm_main.cpp
+	
+	Currently just used so that we have something to compile and test. 
+	In the future, this might become the file defining entry points
+	for a shared library.
+ */
+
+#include <iostream>
+
+#include "boost/date_time/posix_time/posix_time.hpp"
+#include "boost/date_time/local_time/local_time.hpp"
+
+#include "Communication.hpp"
+#include "CommPrint.hpp"
+#include "Utils/Timer.hpp"
+<<<<<<< .mine
+#include "sys/mman.h"
+=======
+#include "Windows.h"
+
+>>>>>>> .r52
+using namespace boost::posix_time;
+using namespace Vatroslav;
+
+int main()
+{ 
+	std::cout << "Communication test program..." << std::endl;
+<<<<<<< .mine
+	int i;
+	CommPar par( CommPar::UNO,  125000,"can1" );
+//	CommPar par( "COM1:");
+=======
+	CommPar par( CommPar::USB_WIN,125000 );
+>>>>>>> .r52
+
+	std::cout << par << std::endl;	
+	CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
+
+	std::cout << "Opened = " << p_comm->Open() << std::endl;
+<<<<<<< .mine
+	
+//	char data[] = { 0x40, 0xF6, 0x60, 0x01, 0x00, 0x0, 0x0, 0x0 };
+	char data[]={2};
+
+	CommMsg msg( 0x12c, data, 1, microsec_clock::local_time() );
+	CommMsg msg1( 0x12c, data, 1, microsec_clock::local_time() );
+
+=======
+	char data[] = { 0x3, 0x1, 0x50, 0x00, 0x00, 0x0, 0x0, 0x0 };
+//	char data[] = { 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0xfe, 0x6 };
+//	char data[] = { 0x3, 0x0, 0x23, 0x00, 0x00, 0x20, 0x0, 0x0 };
+
+	CommMsg msg( 0x66, data, 8, microsec_clock::local_time() );	
+//	CommMsg msg( 0x12c, data, 8, microsec_clock::local_time() );	
+	CommMsg msg1( 0x12c, data, 8, microsec_clock::local_time() );
+	unsigned char *dat;
+	FILE *f;
+	f=fopen("c:\\file.txt","w");
+>>>>>>> .r52
+	std::cout << "Transmitting data:\n" << msg << std::endl;
+<<<<<<< .mine
+	int br;
+	for (i=0;i<100;i++) {
+			std::cout<<microsec_clock::local_time()<<std::endl;
+	/*std::cout<< "Success s= " <<*/ p_comm->Send( msg ); /*<< std::endl;
+	/*std::cout << "Success r= " << */p_comm->Receive( msg1, 1000 ); /*<< std::endl;*/
+//		std::cout << msg1 << std::endl;
+		
+=======
+	std::cout<< "Success = " << p_comm->Send( msg ) << std::endl;
+//	p_comm->Receive(msg1,1000);
+	int i;/*
+	for (i=0;i<50;i++) {
+		p_comm->Receive(msg1,1000);
+		dat=(unsigned char *)msg1.Data();
+		fprintf(f,"%d\n",dat[0]*256+(unsigned char)dat[1]);
+		fprintf(f,"%d\n",dat[2]*256+(unsigned char)dat[3]);
+		fprintf(f,"%d\n",dat[4]*256+(unsigned char)dat[5]);
+		fprintf(f,"%d\n",dat[6]*256+(unsigned char)dat[7]);
+
+		printf("%d %d %d %d\n",(unsigned char) dat[0]*256+(unsigned char)dat[1],(unsigned char)dat[2]*256+(unsigned char)dat[3],(unsigned char)dat[4]*256+(unsigned char)dat[5],(unsigned char)dat[6]*256+(unsigned char)dat[7]);
+
+	}	
+	fclose(f);*/
+/*	std::cout << "Receiving data:" << std::endl; 
+	for ( int i = 0; i < 1; i++ )
+	{
+		std::cout << "Success = " << p_comm->Receive( msg, 1000 ) << std::endl;
+		std::cout << msg << std::endl;
+>>>>>>> .r52
+	}
+*/
+//	p_comm->Send(msg);
+	std::cout<<p_comm->Receive(msg1,1000)<<std::endl;
+		std::cout<<msg1<<std::endl;
+	getchar();
+	return 0;
+	float uk,x1,y1,z1;
+	int x,y,z;
+	while (1){
+		p_comm->Send(msg1);
+		p_comm->Receive(msg1,1000);
+//		std::cout<<msg1<<std::endl;
+		dat=(unsigned char *)msg1.Data();
+		x=dat[1]*256+dat[2];
+		y=dat[3]*256+dat[4];
+		z=dat[5]*256+dat[6];
+		if (dat[1]>128) {
+			x=x-1;
+			x=~x;
+			x=x&0xffff;
+			x=x*(-1);
+		}
+		if (dat[3]>128) {
+			y=y-1;
+			y=~y;
+			y=y&0xffff;
+			y=y*(-1);
+		}
+		if (dat[5]>128) {
+			z=z-1;
+			z=~z;
+			z=z&0xffff;
+			z=z*(-1);
+		}
+//		printf("x=%d y=%d z=%d\n",x,y,z);
+//		printf("x=%.2f y=%.2f z=%.2f uk=%.2f\n",x*3.66/1000,y*3.66/1000,z*3.66/1000,sqrt((float)x*x+y*y+z*z)*3.66/1000);
+		x1=x*3.66/1000;
+		y1=y*3.66/1000;
+		z1=z*3.66/1000;;
+		uk=sqrt((float)x*x+y*y+z*z)*3.66/1000;
+
+<<<<<<< .mine
+	std::cout << "Receiving data:" << std::endl; 
+	
+		std::cout << "Success = " << p_comm->Receive( msg1, 1000 ) << std::endl;
+		std::cout << msg1 << std::endl;
+
+=======
+		printf("roll=%.2f, pitch=%.2f\n",atan2(x1,y1)*180/3.14159+90,atan2(x1,z1)*180/3.14159+90);
+		Sleep(100);
+//		getchar();
+	}
+
+>>>>>>> .r52
+	std::cout << "Press any key  and return to terminate..." << std::endl;
+	char c;
+	std::cin >> c;
+
+	return 0;
+}

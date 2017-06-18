@@ -1,0 +1,148 @@
+#include "Communication/Communication.hpp"
+#include "Device.hpp"
+#include "boost/date_time/posix_time/posix_time_types.hpp"
+//#include "Solenoid.hpp"
+
+namespace Vatroslav
+{
+
+//! Interface for sensors
+/*!
+*/
+struct Sensor : public Device
+{
+public:
+
+	//! Get value from sensor
+	virtual int GetValue()=0;
+	//! Get status of sensor
+	virtual int Status()=0;
+	//! Get sensor type
+
+protected:
+	int type;
+	int value;
+	int status;
+};
+
+struct GasSensor : public Sensor
+{
+public:
+	//! Gas sensor constructor
+	/*!
+		Send number of sensor : 1 - CO,
+		2 - H2S, 3-17SH 
+	*/
+	GasSensor( int SensorNumber, CommPtr pComm );
+
+	//! Gas sensor destructor
+	~GasSensor();
+	//! Get status of gas sensor
+	/*!
+	0 - no communication with sensor, 1 - normal operation, 2 - acceptable delay, 3 - unacceptable delay
+	*/
+	int Status();
+	//! Get value of gas sensor
+	int GetValue();
+	//! Get type of gas sensor
+	int Type();
+	//!  Update value and status of gas sensor
+	bool UpdateRead();
+	//!  Update settings of sensors
+	bool UpdateWrite();
+	//! Connect to sensor
+	bool Connect();
+	//! Disconnect from sensor
+	bool Disconnect();
+
+private:
+	CommPtr pComm_; 
+	boost::posix_time::ptime time;
+	int RecievingStatus;
+	int number;
+	int DelayTime;
+	int value;
+	static const int ALLOWED_DELAY=10000;
+	static const int MAXIMUM_DELAY=30000;
+};
+
+//! Class for temperature sensors
+struct TemperatureSensor : public Sensor
+{
+public:
+	//! Temperature sensor constructor
+	/*!
+		ID determines the ID of device to send temperature	
+	*/
+	TemperatureSensor(int ID, CommPtr pComm);
+	//! Temperature sensor destructor
+	~TemperatureSensor();
+	//! Get status of temperature sensor
+	/*!
+	0 - no communication with sensor, 1 - normal operation, 2 - acceptable delay, 3 - unacceptable delay
+	*/
+	int Status();
+	//! Get value of temperature sensor
+	int GetValue();
+	//!  Update value and status of temperature
+	bool UpdateRead();
+	//!  Update settings of sensors
+	bool UpdateWrite();
+	//! Conncet to temperature sensor
+	bool Connect();
+	//! Disconnect from temperature sensor
+	bool Disconnect();
+
+private:
+	
+	CommPtr pComm_; 
+	boost::posix_time::ptime time;
+	int RecievingStatus;
+	int value;
+	int DelayTime;
+	int id_;
+	static const int ALLOWED_DELAY=10000;
+	static const int MAXIMUM_DELAY=30000;
+};
+
+//! Class for AHRS (Attitude and Heading Reference Systems)
+struct AHRS:public Device
+{
+public:	
+	//! AHRS constructor
+	/*!
+	*/
+	AHRS( CommPtr pComm );
+	//! AHRS destructor
+	/*!
+	*/
+	~AHRS();
+	//! Get AHRS status
+	/*!
+	0 - no communication with sensor, 1 - normal operation, 2 - acceptable delay, 3 - unacceptable delay
+	*/
+	int Status();
+	//! Get value of data no from AHRS
+	/*!
+	Return value of no data from AHRS. For no: 1 - roll, 2 - pitch, 3 - yaw, others not yet implemented
+	*/
+	float GetValue(int no);
+	//!  Update value from AHRS
+	bool UpdateRead();
+	//!  Update settings of AHRS
+	bool UpdateWrite();
+	//! Connect to the AHRS
+	bool Connect();
+	//! Disconnect from AHRS
+	bool Disconnect();
+private:
+
+	CommPtr pComm_; 	
+	boost::posix_time::ptime time;
+	int DelayTime,status;
+	float roll,pitch,yaw,ax,ay,az;
+	static const int ALLOWED_DELAY=1000;
+	static const int MAXIMUM_DELAY=3000;
+};
+
+}

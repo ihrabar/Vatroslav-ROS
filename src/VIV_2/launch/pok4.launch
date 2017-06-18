@@ -1,0 +1,13 @@
+<launch>
+
+	 <arg name="host" default="192.168.1.14" />
+  <node pkg="lms1xx" name="lms1xx" type="LMS1xx_node">
+    <param name="host" value="$(arg host)" />
+  </node>
+
+	<node name="canCommunication" pkg="vatroslav" type="canCommunication"/>  
+	<node name="mainControl" pkg="vatroslav" type="mainControl" />  
+
+
+</launch>
+
