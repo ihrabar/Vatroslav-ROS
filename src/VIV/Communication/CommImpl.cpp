@@ -45,7 +45,14 @@ CommImpl& CommImpl::Create( const CommPar& par )
 				case CommPar::UNO:
 					return CanAdvSingleton::Instance();
 					break;
-#endif				
+#endif
+
+#ifdef canROS_UNO
+                std::cout << "CommPar UNO workspace" << std::endl;
+				case CommPar::UNO:
+					return CanAdvSingleton::Instance();
+					break;
+#endif
 				default:
 					// ovaj dummy se implementira
 					return DummyImplSingleton::Instance();

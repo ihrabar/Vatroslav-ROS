@@ -1,8 +1,0 @@
-<launch>
-
-	<node name="canCommunication" pkg="vatroslav" type="canCommunication" output="screen"/>  
-	<node name="mainControl" pkg="vatroslav" type="mainControl" output="screen" />  
-
-
-</launch>
-

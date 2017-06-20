@@ -249,6 +249,10 @@ stdio.h
 -
 CommMsg.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
+../Devices/MotorEPOS.hpp
+/home/larics/catkin_ws/src/VIV/Devices/MotorEPOS.hpp
+../Devices/LinAct.hpp
+/home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
 cassert
 -
 cstring

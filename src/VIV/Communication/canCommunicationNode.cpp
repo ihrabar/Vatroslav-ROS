@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include "CommMsg.hpp"
 
+#include "../Devices/MotorEPOS.hpp"
+#include "../Devices/LinAct.hpp"
+
 #include <cassert>
 #include <cstring>	// for memecpy
 #include <algorithm>
@@ -31,7 +34,7 @@
 
 //using namespace boost;
 
-
+#define canROS_UNO
 // OVO JE CAN NODE
 // TU CE SE SLATI NA CAN SABIRNICU I PRIMLJENE PORUKE PUBLISHATI SVIM OSTALIM NODEOVIMA
 //DODATI MAIN U KOJEM CE SE INICIJALIYIRATI KOMUNIKAICJA
