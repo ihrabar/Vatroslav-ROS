@@ -3,13 +3,11 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
       <config projectName="Project" targetName="std_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="vatroslav_generate_messages_eus" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="geometry_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="actionlib_generate_messages_lisp" />
+      <config projectName="Project" targetName="tf_generate_messages_py" />
       <config projectName="Project" targetName="vatroslav_generate_messages_nodejs" />
       <config projectName="Project" targetName="vatroslav_generate_messages_cpp" />
-      <config projectName="Project" targetName="run_tests" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_beginner_tutorials_generate_messages_check_deps_Num" />
       <config projectName="Project" targetName="vatroslav_generate_messages_py" />
       <config projectName="Project" targetName="tf_generate_messages_cpp" />
@@ -17,32 +15,33 @@
       <config projectName="Project" targetName="beginner_tutorials_generate_messages_cpp" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="beginner_tutorials_genpy" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="actionlib_generate_messages_cpp" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_py" />
       <config projectName="Project" targetName="download_extra_data" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="vatroslav_geneus" />
       <config projectName="Project" targetName="beginner_tutorials_generate_messages_py" />
       <config projectName="Project" targetName="tests" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="roscpp_generate_messages_lisp" />
       <config projectName="Project" targetName="_vatroslav_generate_messages_check_deps_CanMsg" />
       <config projectName="Project" targetName="beginner_tutorials_generate_messages" />
       <config projectName="Project" targetName="vatroslav_genlisp" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="vatroslav_generate_messages_eus" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_py" />
       <config projectName="Project" targetName="roscpp_generate_messages_py" />
       <config projectName="Project" targetName="tf_generate_messages_eus" />
-      <config projectName="Project" targetName="vatroslav_gencpp" />
       <config projectName="Project" targetName="gtest_main" />
-      <config projectName="Project" targetName="tf_generate_messages_py" />
       <config projectName="Project" targetName="actionlib_generate_messages_eus" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_py" />
       <config projectName="Project" targetName="clean_test_results" />
-      <config projectName="Project" targetName="beginner_tutorials_genlisp" />
-      <config projectName="Project" targetName="roscpp_generate_messages_cpp" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="sensor_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="talker" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="actionlib_generate_messages_lisp" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="gtest" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_nodejs" />
@@ -51,38 +50,39 @@
       <config projectName="Project" targetName="vatroslav_generate_messages_lisp" />
       <config projectName="Project" targetName="actionlib_generate_messages_py" />
       <config projectName="Project" targetName="vatroslav_generate_messages" />
-      <config projectName="Project" targetName="actionlib_generate_messages_cpp" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="roscpp_generate_messages_cpp" />
       <config projectName="Project" targetName="tf_generate_messages_nodejs" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="beginner_tutorials_geneus" />
       <config projectName="Project" targetName="actionlib_generate_messages_nodejs" />
-      <config projectName="Project" targetName="listener" />
+      <config projectName="Project" targetName="beginner_tutorials_generate_messages_eus" />
       <config projectName="Project" targetName="std_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="std_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="beginner_tutorials_generate_messages_nodejs" />
       <config projectName="Project" targetName="roscpp_generate_messages_eus" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="sensor_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="vatroslav_gencpp" />
       <config projectName="Project" targetName="canCommunication" />
       <config projectName="Project" targetName="beginner_tutorials_gencpp" />
+      <config projectName="Project" targetName="beginner_tutorials_genlisp" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="tf_generate_messages_lisp" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="doxygen" />
-      <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_beginner_tutorials_generate_messages_check_deps_AddTwoInts" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="geometry_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="std_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="mainControl" />
       <config projectName="Project" targetName="beginner_tutorials_gennodejs" />
       <config projectName="Project" targetName="vatroslav_genpy" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="run_tests" />
       <config projectName="Project" targetName="vatroslav_gennodejs" />
-      <config projectName="Project" targetName="vatroslav_geneus" />
+      <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="beginner_tutorials_generate_messages_eus" />
-      <config projectName="Project" targetName="beginner_tutorials_geneus" />
+      <config projectName="Project" targetName="listener" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -109,8 +109,8 @@
       <file leaf-file-name="flipper_test.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VIV/Devices/flipper_test.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="132" column="13" lean-forward="false" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
+            <state relative-caret-position="2484">
+              <caret line="138" column="13" lean-forward="false" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -149,7 +149,7 @@
       <file leaf-file-name="CommImpl.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VIV/Communication/CommImpl.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
+            <state relative-caret-position="882">
               <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
               <folding>
                 <element signature="e#572#647#0" expanded="true" />
@@ -164,8 +164,8 @@
       <file leaf-file-name="canCommunicationNode.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VIV/Communication/canCommunicationNode.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="846">
+              <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -182,8 +182,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/VIV/Communication/CommImpl.cpp" />
-        <option value="$PROJECT_DIR$/VIV/Communication/canCommunicationNode.cpp" />
         <option value="$PROJECT_DIR$/VIV/Devices/flipper_test.cpp" />
+        <option value="$PROJECT_DIR$/VIV/Communication/canCommunicationNode.cpp" />
       </list>
     </option>
   </component>
@@ -934,11 +934,12 @@
       <updated>1497708143083</updated>
       <workItem from="1497708147428" duration="5129000" />
       <workItem from="1497955814452" duration="1200000" />
+      <workItem from="1497957389807" duration="534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6329000" />
+    <option name="totallyTimeSpent" value="6863000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -951,6 +952,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1922" height="893" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -986,6 +988,59 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/VIV/Devices/flipper_test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="132" column="13" lean-forward="false" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VIV/Devices/flipper_test.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VIV/Communication/CanAdv.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VIV/Communication/CanAdv.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VIV/Communication/CommImpl.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+          <folding>
+            <element signature="e#572#647#0" expanded="true" />
+            <element signature="e#687#762#0" expanded="true" />
+            <element signature="e#795#921#0" expanded="true" />
+            <element signature="e#964#1090#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VIV/Communication/canCommunicationNode.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/VIV/Devices/flipper_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1027,15 +1082,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VIV/Devices/flipper_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="132" column="13" lean-forward="false" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
+        <state relative-caret-position="2484">
+          <caret line="138" column="13" lean-forward="false" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VIV/Communication/CommImpl.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
+        <state relative-caret-position="882">
           <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
           <folding>
             <element signature="e#572#647#0" expanded="true" />
@@ -1048,8 +1103,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VIV/Communication/canCommunicationNode.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="846">
+          <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
           <folding />
         </state>
       </provider>
