@@ -16,7 +16,7 @@
 #include "SerialWin.hpp"
 
 
-
+//using namespace canROS_UNO;
 namespace Vatroslav
 {
 
@@ -46,15 +46,15 @@ CommImpl& CommImpl::Create( const CommPar& par )
 					return CanAdvSingleton::Instance();
 					break;
 #endif
-
-#ifdef canROS_UNO
-                std::cout << "CommPar UNO workspace" << std::endl;
+#ifdef CAN_ROS_UNO
+                std::cout << "CommPar ROS_UNO workspace" << std::endl;
 				case CommPar::UNO:
 					return CanAdvSingleton::Instance();
 					break;
 #endif
 				default:
 					// ovaj dummy se implementira
+					std::cout << "DummyImpl_1" << std::endl;
 					return DummyImplSingleton::Instance();
 			}
 			break;

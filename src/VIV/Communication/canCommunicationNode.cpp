@@ -1,5 +1,6 @@
 //#ifdef VATROSLAV_UNO
 
+
 #include "ros/ros.h"
 #include <stdlib.h>
 #include <string.h>
@@ -32,9 +33,15 @@
 #include <ros/console.h>
 //#undef min	// remove min macro 
 
-//using namespace boost;
+using namespace boost;
+namespace Vatroslav{
+	#define CAN_ROS_UNO
+}
+
 
 namespace canROS_UNO{
+
+	
     // OVO JE CAN NODE
     // TU CE SE SLATI NA CAN SABIRNICU I PRIMLJENE PORUKE PUBLISHATI SVIM OSTALIM NODEOVIMA
     //DODATI MAIN U KOJEM CE SE INICIJALIYIRATI KOMUNIKAICJA
@@ -128,7 +135,10 @@ namespace canROS_UNO{
 
         };*/
 
+}
 
+using namespace canROS_UNO;
+//using namespace Vatroslav;
 
     int main( int argc, char* argv[] )
     {
@@ -162,4 +172,3 @@ namespace canROS_UNO{
 
     }
 
-}
