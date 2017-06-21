@@ -3,11 +3,9 @@
 
  */
 
-#define a
-#ifdef a
 //#ifdef VATROSLAV_UNO
 
-//#ifndef VATROSLAV_CAN_ADV_HPP
+#ifndef VATROSLAV_CAN_ADV_HPP
 #define VATROSLAV_CAN_ADV_HPP
 
 #include <cassert>

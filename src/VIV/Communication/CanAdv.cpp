@@ -3,8 +3,6 @@
  */
 
 //#ifdef VATROSLAV_UNO
-#define a
-#ifdef a
 
 #include "ros/ros.h"
 
@@ -244,5 +242,5 @@ bool CanAdv::Receive(CommMsg& msg, unsigned short timeout)
 
 }
 
-#endif // VATROSLAV_UNO
+//#endif // VATROSLAV_UNO
 

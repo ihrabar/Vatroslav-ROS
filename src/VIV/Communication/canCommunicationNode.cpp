@@ -71,9 +71,9 @@ namespace canROS_UNO{
         result_data[6] = (char) por.data[6];
         result_data[7] = (char) por.data[7];
 
-        //Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, (por.time).toBoost());
+        Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, (por.time).toBoost());
 
-        //(*p_comm2)->Send(result);
+        (*p_comm2)->Send(result);
         std::cout << "poslano na CAN canCommNode" << std::endl;
         ROS_INFO("poslano na CAN  canCommNode");
 
@@ -88,13 +88,13 @@ namespace canROS_UNO{
         const boost::posix_time::ptime temp(por1.Timestamp());
 
         //std::string temp2 = boost::posix_time::to_iso_string(temp);//korisitit ROStime umjesto string, ima dva par sec i nsec, oba integeri
-        //ros::Time temp2 = ros::Time::fromBoost(temp);
+        ros::Time temp2 = ros::Time::fromBoost(temp);
 
         por2.id = por1.Id();
         //memcpy(&por2.data[0], por1.Data(), por1.Size());
         por2.data = std::string ( por1.Data(), por1.Size() );
         por2.size = por1.Size();
-       // por2.time = temp2;
+        por2.time = temp2;
         //por2.time = std::string ( por1.Timestamp(), 4 );
         //memcpy(&por2.time, por1.Timestamp(), 4);//
         //memcpy(&por2.time,por1.Data(), 32);//32bita jer je u CanMsg definirano int32 kao prostor za zapis vremena

@@ -881,6 +881,19 @@ tf2_msgs_generate_messages_py/fast:
 .PHONY : tf2_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named mainControl
+
+# Build rule for target.
+mainControl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mainControl
+.PHONY : mainControl
+
+# fast build rule for target.
+mainControl/fast:
+	$(MAKE) -f VIV/CMakeFiles/mainControl.dir/build.make VIV/CMakeFiles/mainControl.dir/build
+.PHONY : mainControl/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -1273,6 +1286,7 @@ help:
 	@echo "... tf_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... mainControl"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_eus"

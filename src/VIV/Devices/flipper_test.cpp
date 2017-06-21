@@ -26,16 +26,16 @@ bool SendV( const CommMsg& por1)
 	vatroslav::CanMsg por2;
 	const boost::posix_time::ptime temp(por1.Timestamp());
 
-	//ros::Time temp2 = ros::Time::fromBoost(temp);
+	ros::Time temp2 = ros::Time::fromBoost(temp);
 
     //boost::posix_time::ptime pt = t.toBoost();
 
-	//std::string temp2 = boost::posix_time::to_iso_string(temp);
+	//  std::string temp2 = boost::posix_time::to_iso_string(temp);
 
 	por2.id = por1.Id();
 	por2.data = std::string ( por1.Data(), por1.Size() );
 	por2.size = por1.Size();
-	//por2.time = temp2;
+	por2.time = temp2;
 
 	std::cout << "Gotova priprema za slanje flipperTesta na sendToCAN" << std::endl;
   	sendToCAN.publish(por2);
@@ -93,9 +93,9 @@ void canCallback(const vatroslav::CanMsg& por)
 	result_data[6] = (char) por.data[6];
 	result_data[7] = (char) por.data[7];
 		
-	//Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, (por.time).toBoost());
+	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, (por.time).toBoost());
 	
-	//msgList.push_back(result);
+	msgList.push_back(result);
 	ROS_DEBUG("Skunto s topica flipperTest");
 	
 }

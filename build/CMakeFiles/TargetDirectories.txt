@@ -78,6 +78,7 @@
 /home/larics/catkin_ws/build/VIV/CMakeFiles/tf_generate_messages_lisp.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/tf2_msgs_generate_messages_py.dir
+/home/larics/catkin_ws/build/VIV/CMakeFiles/mainControl.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/actionlib_msgs_generate_messages_py.dir
 /home/larics/catkin_ws/build/VIV/CMakeFiles/tf2_msgs_generate_messages_eus.dir

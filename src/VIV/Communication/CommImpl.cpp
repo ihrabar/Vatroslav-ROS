@@ -50,7 +50,7 @@ CommImpl& CommImpl::Create( const CommPar& par )
 					break;
 #endif*/
 //#ifdef CAN_ROS_UNO
-                std::cout << "CommPar ROS_UNO workspace" << std::endl;
+  	            std::cout << "CommPar ROS_UNO workspace" << std::endl;
 				case Vatroslav::CommPar::UNO:
 					return CanAdvSingleton::Instance();
 					break;
