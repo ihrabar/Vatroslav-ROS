@@ -119,20 +119,14 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o
  /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
  /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
- /home/larics/catkin_ws/src/VIV/Communication/SerialBoost.hpp
- /home/larics/catkin_ws/src/VIV/Communication/TimeoutSerial.h
  /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
  /home/larics/catkin_ws/src/VIV/Communication/canCommunicationNode.cpp
  /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
- /home/larics/catkin_ws/src/VIV/Devices/Flipper.hpp
- /home/larics/catkin_ws/src/VIV/Devices/Kinematics.hpp
  /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Motor.hpp
  /home/larics/catkin_ws/src/VIV/Devices/MotorEPOS.hpp
- /home/larics/catkin_ws/src/VIV/Devices/Sensor.hpp
- /home/larics/catkin_ws/src/VIV/Devices/WirelessVIV.hpp
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h

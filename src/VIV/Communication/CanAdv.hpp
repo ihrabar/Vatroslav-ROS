@@ -2,7 +2,10 @@
 	\brief	CAN communication implementation for the Advantech ??? CAN board.
 
  */
-#ifdef VATROSLAV_UNO
+
+#define a
+#ifdef a
+//#ifdef VATROSLAV_UNO
 
 //#ifndef VATROSLAV_CAN_ADV_HPP
 #define VATROSLAV_CAN_ADV_HPP

@@ -25,12 +25,15 @@ namespace Vatroslav
 /* static */
 CommImpl& CommImpl::Create( const CommPar& par )
 {
+
+//#define CAN_ROS_UNO
+
 	switch ( par.Interface() )
 	{
-		case CommPar::CAN:
+		case Vatroslav::CommPar::CAN:
 			switch ( par.CanDriver() )
 			{
-#ifdef VATROSLAV_IXXAT_WIN
+/*#ifdef VATROSLAV_IXXAT_WIN
 				case CommPar::IXXAT:
 					return CanIxxatSingleton::Instance();
 					break;
@@ -45,16 +48,17 @@ CommImpl& CommImpl::Create( const CommPar& par )
 				case CommPar::UNO:
 					return CanAdvSingleton::Instance();
 					break;
-#endif
-#ifdef CAN_ROS_UNO
+#endif*/
+//#ifdef CAN_ROS_UNO
                 std::cout << "CommPar ROS_UNO workspace" << std::endl;
-				case CommPar::UNO:
+				case Vatroslav::CommPar::UNO:
 					return CanAdvSingleton::Instance();
 					break;
-#endif
+//#endif
 				default:
 					// ovaj dummy se implementira
 					std::cout << "DummyImpl_1" << std::endl;
+					std::cout << ((par.CanDriver() == Vatroslav::CommPar::UNO) ? "true" : "false") << std::endl;
 					return DummyImplSingleton::Instance();
 			}
 			break;

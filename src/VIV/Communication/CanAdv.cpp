@@ -2,7 +2,9 @@
 
  */
 
-#ifdef VATROSLAV_UNO
+//#ifdef VATROSLAV_UNO
+#define a
+#ifdef a
 
 #include "ros/ros.h"
 

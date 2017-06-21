@@ -231,6 +231,10 @@ boost/asio.hpp
 /home/larics/catkin_ws/src/VIV/Communication/canCommunicationNode.cpp
 ros/ros.h
 /home/larics/catkin_ws/src/VIV/Communication/ros/ros.h
+ros/time.h
+/home/larics/catkin_ws/src/VIV/Communication/ros/time.h
+ros/console.h
+-
 stdlib.h
 -
 string.h
@@ -265,21 +269,13 @@ CanAdv.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CanAdv.hpp
 errno.h
 -
-boost/date_time/posix_time/posix_time_types.hpp
--
 Communication.hpp
 /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
-SerialBoost.hpp
-/home/larics/catkin_ws/src/VIV/Communication/SerialBoost.hpp
-../Devices/WirelessVIV.hpp
-/home/larics/catkin_ws/src/VIV/Devices/WirelessVIV.hpp
 unistd.h
 -
 string.h
 -
 vatroslav/CanMsg.h
--
-ros/console.h
 -
 
 /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp

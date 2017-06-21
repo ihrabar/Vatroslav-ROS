@@ -33,7 +33,7 @@ struct CanMsg_
     : id(0)
     , data(_alloc)
     , size(0)
-    , time(_alloc)  {
+    , time()  {
   (void)_alloc;
     }
 
@@ -48,7 +48,7 @@ struct CanMsg_
    typedef uint8_t _size_type;
   _size_type size;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _time_type;
+   typedef ros::Time _time_type;
   _time_type time;
 
 
@@ -128,12 +128,12 @@ struct MD5Sum< ::vatroslav::CanMsg_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "4a2f3d2bf382175178ead4deb3882e9c";
+    return "fb033d7b450080f676a98353203d84c3";
   }
 
   static const char* value(const ::vatroslav::CanMsg_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x4a2f3d2bf3821751ULL;
-  static const uint64_t static_value2 = 0x78ead4deb3882e9cULL;
+  static const uint64_t static_value1 = 0xfb033d7b450080f6ULL;
+  static const uint64_t static_value2 = 0x76a98353203d84c3ULL;
 };
 
 template<class ContainerAllocator>
@@ -155,7 +155,7 @@ struct Definition< ::vatroslav::CanMsg_<ContainerAllocator> >
     return "uint8 id \n\
 string data  \n\
 uint8 size\n\
-string time\n\
+time time\n\
 ";
   }
 
@@ -203,7 +203,7 @@ struct Printer< ::vatroslav::CanMsg_<ContainerAllocator> >
     s << indent << "size: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.size);
     s << indent << "time: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.time);
+    Printer<ros::Time>::stream(s, indent + "  ", v.time);
   }
 };
 
