@@ -61,7 +61,7 @@ namespace canROS_UNO{
 
     void canCallback(const vatroslav::CanMsg& por)
     {
-         char result_data[] = {0 ,0, 0, 0, 0, 0, 0, 0};
+         char result_data[] = {0 ,0, 0, 0, 0, 0, 0, 0, 0};
         result_data[0] = (char) por.data[0];
         result_data[1] = (char) por.data[1];
         result_data[2] = (char) por.data[2];
@@ -74,7 +74,7 @@ namespace canROS_UNO{
         Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, (por.time).toBoost());
 
         (*p_comm2)->Send(result);
-        std::cout << "poslano na CAN canCommNode" << std::endl;
+        std::cout << "poslano na CAN canCommNode: " << (int) result_data[0] << std::endl;
         ROS_INFO("poslano na CAN  canCommNode");
 
       //ROS_INFO("I heard: [%s]", msg->data.c_str());

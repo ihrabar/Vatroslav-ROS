@@ -20,7 +20,7 @@ ros::Subscriber subCAN;
 std::list<Vatroslav::CommMsg> msgList;	// vector for storing data from subscriber
 
 /* virtual */
-bool SendV( const CommMsg& por1)
+bool Send( const CommMsg& por1)
 {
 
 	vatroslav::CanMsg por2;
@@ -129,12 +129,12 @@ int main( int argc, char* argv[] )
 
 	
 	while (1){
-		char data[] = { 3,2,3,4,5,6,7,8};
+		char data[] = { 1,2,3,4,5,6,7,8};
 	
 		CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
 
 		std::cout << "debugg petlja" << std::endl;
-		SendV( msg );
+		p_comm->Send( msg );
 		sleep(1);
 	}
 
