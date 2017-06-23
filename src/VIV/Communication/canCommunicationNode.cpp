@@ -25,11 +25,11 @@
 #include "CanAdv.hpp"
 #include <errno.h>
 
-//#include <boost/date_time/posix_time/posix_time_types.hpp>
-//#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
 #include "Communication.hpp"
-//#include "SerialBoost.hpp"
-//#include "../Devices/WirelessVIV.hpp"
+#include "SerialBoost.hpp"
+#include "../Devices/WirelessVIV.hpp"
 #include <unistd.h>
 #include <string.h>
 
@@ -38,10 +38,7 @@
 //#undef min	// remove min macro 
 
 using namespace boost;
-
-
-
-
+using namespace Vatroslav;
 
 namespace canROS_UNO{
 
@@ -73,7 +70,7 @@ namespace canROS_UNO{
 
         Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, (por.time).toBoost());
 
-        (*p_comm2)->Send(result);
+        /*(*p_comm2)->*/Vatroslav::Send(result);
         std::cout << "poslano na CAN canCommNode: " << (int) result_data[0] << std::endl;
         ROS_INFO("poslano na CAN  canCommNode");
 
@@ -143,7 +140,6 @@ namespace canROS_UNO{
 }
 
 using namespace canROS_UNO;
-//using namespace Vatroslav;
 
     int main( int argc, char* argv[] )
     {
@@ -162,11 +158,11 @@ using namespace canROS_UNO;
 
         /*Pero mojPero(p_comm);*/
 
-        char data[] = { 3,2,3,4,5,6,7,8};
+        char data[] = { 3,2,3,4,5,6,7,8};//OVO JE SAMO YA PROBU
         Vatroslav::CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
 
 
-        publishCAN(msg);
+        publishCAN(msg);// TU DODOATI PETLJU KOJA REDOVNO KONZULTIRA CANBUS
 
         // %Tag(SUBSCRIBER)%
         ros::Subscriber sub = n.subscribe("sendCAN", 1000, canCallback);

@@ -2,11 +2,12 @@
 #define VATROSLAV_LINACT_HPP
 
 #include "Device.hpp"
-#include "../Communication/Communication.hpp"
-#include "../Communication/canTopicPublisher.hpp"
+//#include "../Communication/Communication.hpp"
+//#include "../Communication/canTopicPublisher.hpp"
 
-namespace Vatroslav
-{
+//namespace Vatroslav
+//{
+using namespace Vatroslav;
 
 class LinAct : public Device
 {
@@ -112,5 +113,5 @@ private:
 	bool open_;
 	CommPtr pComm_; 
 };
-}
+//}
 #endif

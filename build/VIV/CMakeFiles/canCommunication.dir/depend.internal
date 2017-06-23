@@ -119,14 +119,20 @@ VIV/CMakeFiles/canCommunication.dir/Communication/canCommunicationNode.cpp.o
  /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
  /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
+ /home/larics/catkin_ws/src/VIV/Communication/SerialBoost.hpp
+ /home/larics/catkin_ws/src/VIV/Communication/TimeoutSerial.h
  /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
  /home/larics/catkin_ws/src/VIV/Communication/canCommunicationNode.cpp
  /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/EPOSDeclarations.hpp
+ /home/larics/catkin_ws/src/VIV/Devices/Flipper.hpp
+ /home/larics/catkin_ws/src/VIV/Devices/Kinematics.hpp
  /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Motor.hpp
  /home/larics/catkin_ws/src/VIV/Devices/MotorEPOS.hpp
+ /home/larics/catkin_ws/src/VIV/Devices/Sensor.hpp
+ /home/larics/catkin_ws/src/VIV/Devices/WirelessVIV.hpp
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h
@@ -247,32 +253,14 @@ VIV/CMakeFiles/canCommunication.dir/Devices/Kinematics.cpp.o
  /opt/ros/kinetic/include/ros/time.h
  /opt/ros/kinetic/include/ros/types.h
 VIV/CMakeFiles/canCommunication.dir/Devices/LinAct.cpp.o
- /home/larics/catkin_ws/devel/include/vatroslav/CanMsg.h
  /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommMsg.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPar.hpp
  /home/larics/catkin_ws/src/VIV/Communication/CommPrint.hpp
  /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
- /home/larics/catkin_ws/src/VIV/Communication/can4linux.h
- /home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
  /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
  /home/larics/catkin_ws/src/VIV/Devices/LinAct.cpp
  /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
- /opt/ros/kinetic/include/ros/builtin_message_traits.h
- /opt/ros/kinetic/include/ros/datatypes.h
- /opt/ros/kinetic/include/ros/duration.h
- /opt/ros/kinetic/include/ros/exception.h
- /opt/ros/kinetic/include/ros/macros.h
- /opt/ros/kinetic/include/ros/message_forward.h
- /opt/ros/kinetic/include/ros/message_operations.h
- /opt/ros/kinetic/include/ros/message_traits.h
- /opt/ros/kinetic/include/ros/platform.h
- /opt/ros/kinetic/include/ros/roscpp_serialization_macros.h
- /opt/ros/kinetic/include/ros/rostime_decl.h
- /opt/ros/kinetic/include/ros/serialization.h
- /opt/ros/kinetic/include/ros/serialized_message.h
- /opt/ros/kinetic/include/ros/time.h
- /opt/ros/kinetic/include/ros/types.h
 VIV/CMakeFiles/canCommunication.dir/Devices/MotorEPOS.cpp.o
  /home/larics/catkin_ws/devel/include/vatroslav/CanMsg.h
  /home/larics/catkin_ws/src/VIV/Communication/CommImpl.hpp

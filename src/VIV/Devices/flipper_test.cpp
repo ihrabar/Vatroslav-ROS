@@ -7,7 +7,6 @@
 #include "flipper_test.hpp"
 
 
-
 //using namespace std;
 
 using namespace Vatroslav;
@@ -19,90 +18,88 @@ ros::Subscriber subCAN;
 
 std::list<Vatroslav::CommMsg> msgList;	// vector for storing data from subscriber
 
-/* virtual */
-bool Send( const CommMsg& por1)
-{
+namespace Can_ROS_UNO_2 {
+	bool SendV(const CommMsg &por1) {
 
-	vatroslav::CanMsg por2;
-	const boost::posix_time::ptime temp(por1.Timestamp());
+		vatroslav::CanMsg por2;
+		const boost::posix_time::ptime temp(por1.Timestamp());
 
-	ros::Time temp2 = ros::Time::fromBoost(temp);
+		ros::Time temp2 = ros::Time::fromBoost(temp);
 
-    //boost::posix_time::ptime pt = t.toBoost();
+		//boost::posix_time::ptime pt = t.toBoost();
 
-	//  std::string temp2 = boost::posix_time::to_iso_string(temp);
+		//  std::string temp2 = boost::posix_time::to_iso_string(temp);
 
-	por2.id = por1.Id();
-	por2.data = std::string ( por1.Data(), por1.Size() );
-	por2.size = por1.Size();
-	por2.time = temp2;
+		por2.id = por1.Id();
+		por2.data = std::string(por1.Data(), por1.Size());
+		por2.size = por1.Size();
+		por2.time = temp2;
 
-	std::cout << "Gotova priprema za slanje flipperTesta na sendToCAN" << std::endl;
-  	sendToCAN.publish(por2);
-	
-	std::cout << "Poslano flipperTesta na sendToCAN" << std::endl;
-    ROS_DEBUG("Poslano flipperTesta na sendToCAN");
-	return 0;
+		std::cout << "Gotova priprema za slanje flipperTesta na sendToCAN" << std::endl;
+		sendToCAN.publish(por2);
 
-}
+		std::cout << "Poslano flipperTesta na sendToCAN" << std::endl;
+		ROS_DEBUG("Poslano flipperTesta na sendToCAN");
+		return 0;
+
+	}
 
 //-----------------------------------------------------------------------------
 
 /* virtual */
-bool Receive(CommMsg& msg, unsigned short timeout)
-{
+	bool ReceiveV(CommMsg &msg, unsigned short timeout) {
 
-	bool success=false;
-	boost::posix_time::time_duration dur;
-	pt::ptime t1,t2;
+		bool success = false;
+		boost::posix_time::time_duration dur;
+		pt::ptime t1, t2;
 
-	t1=boost::posix_time::microsec_clock::local_time();
-	std::cout << "Zahtjev za primanjem flipperTest" << std::endl;
-	ROS_DEBUG("Zahtjev za primanjem flipperTest");
-		while (msgList.empty()){
-			t2=boost::posix_time::microsec_clock::local_time();
-			dur=t2-t1;
+		t1 = boost::posix_time::microsec_clock::local_time();
+		std::cout << "Zahtjev za primanjem flipperTest" << std::endl;
+		ROS_DEBUG("Zahtjev za primanjem flipperTest");
+		while (msgList.empty()) {
+			t2 = boost::posix_time::microsec_clock::local_time();
+			dur = t2 - t1;
 
-			if (dur.total_milliseconds()>timeout){
-				success=false;
+			if (dur.total_milliseconds() > timeout) {
+				success = false;
 				break;
 			}
-			if (!msgList.empty()){
-				msg=msgList.front();
+			if (!msgList.empty()) {
+				msg = msgList.front();
 				msgList.pop_front();
 				std::cout << "primljenjo flipperTest" << std::endl;
 				ROS_DEBUG("primljenjo flipperTest");
-				success=true;
+				success = true;
 				break;
 			}
 
 		}
-	return success;
+		return success;
 
+	}
+
+	void canCallback(const vatroslav::CanMsg &por) {
+		char result_data[] = {0, 0, 0, 0, 0, 0, 0, 0};
+		result_data[0] = (char) por.data[0];
+		result_data[1] = (char) por.data[1];
+		result_data[2] = (char) por.data[2];
+		result_data[3] = (char) por.data[3];
+		result_data[4] = (char) por.data[4];
+		result_data[5] = (char) por.data[5];
+		result_data[6] = (char) por.data[6];
+		result_data[7] = (char) por.data[7];
+
+		Vatroslav::CommMsg result((unsigned short) 1, result_data, (size_t) por.size, (por.time).toBoost());
+
+		msgList.push_back(result);
+		ROS_DEBUG("Skunto s topica flipperTest");
+
+	}
 }
-
-void canCallback(const vatroslav::CanMsg& por)
-{
-	 char result_data[] = {0 ,0, 0, 0, 0, 0, 0, 0};
-	result_data[0] = (char) por.data[0];
-	result_data[1] = (char) por.data[1];
-	result_data[2] = (char) por.data[2];
-	result_data[3] = (char) por.data[3];
-	result_data[4] = (char) por.data[4];
-	result_data[5] = (char) por.data[5];
-	result_data[6] = (char) por.data[6];
-	result_data[7] = (char) por.data[7];
-		
-	Vatroslav::CommMsg result((unsigned short)1, result_data, (size_t) por.size, (por.time).toBoost());
-	
-	msgList.push_back(result);
-	ROS_DEBUG("Skunto s topica flipperTest");
-	
-}
-
 //-----------------------------------------------------------------------------
-
-
+#include "flipper_test_CAN.hpp"
+using namespace CanROS_UNO;
+using namespace Can_ROS_UNO_2;
 
 int main( int argc, char* argv[] )
 {
@@ -120,9 +117,9 @@ int main( int argc, char* argv[] )
 	ROS_INFO("krenuo flipperTest");
 	std::cout << "krenuo flipperTest" << std::endl;
 
-	CommPar par( Vatroslav::CommPar::UNO,125000,"can0" );
+	CommPar par( CommPar::UNO,125000,"can0" );
 
-	CommPtr p_comm( Vatroslav::Communication::Create( Communication::BLOCKING, par ) );
+	CommPtr p_comm( Communication::Create( Communication::BLOCKING, par ) );
 
 
 	//samo demo ya git
@@ -133,8 +130,8 @@ int main( int argc, char* argv[] )
 	
 		CommMsg msg( 1, data, 8, boost::posix_time::microsec_clock::local_time() );
 
-		std::cout << "debugg petlja" << std::endl;
-		p_comm->Send( msg );
+		std::cout << "debugg petlja" << p_comm->Send( msg ) << std::endl;
+		//p_comm->Send( msg );
 		sleep(1);
 	}
 

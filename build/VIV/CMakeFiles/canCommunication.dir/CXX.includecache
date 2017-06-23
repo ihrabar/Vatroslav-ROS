@@ -269,8 +269,16 @@ CanAdv.hpp
 /home/larics/catkin_ws/src/VIV/Communication/CanAdv.hpp
 errno.h
 -
+boost/date_time/posix_time/posix_time_types.hpp
+-
+boost/date_time/posix_time/posix_time.hpp
+-
 Communication.hpp
 /home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
+SerialBoost.hpp
+/home/larics/catkin_ws/src/VIV/Communication/SerialBoost.hpp
+../Devices/WirelessVIV.hpp
+/home/larics/catkin_ws/src/VIV/Devices/WirelessVIV.hpp
 unistd.h
 -
 string.h
@@ -353,10 +361,6 @@ LinAct.hpp
 /home/larics/catkin_ws/src/VIV/Devices/LinAct.hpp
 Device.hpp
 /home/larics/catkin_ws/src/VIV/Devices/Device.hpp
-../Communication/Communication.hpp
-/home/larics/catkin_ws/src/VIV/Communication/Communication.hpp
-../Communication/canTopicPublisher.hpp
-/home/larics/catkin_ws/src/VIV/Communication/canTopicPublisher.hpp
 
 /home/larics/catkin_ws/src/VIV/Devices/Motor.hpp
 string
